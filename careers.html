@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers</title>
+</head>
+<style>
+    
+:root{
+  --brand:#ff2b85;
+  --text:#111;
+  --muted:#555;
+  --bg:#fff;
+  --card:#f5b7cd;
+  --card-radius:18px;
+  --overlay-start:rgba(0,0,0,0);
+  --overlay-end:rgba(0,0,0,.75)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.header-inner{display:flex;align-items:center;gap:24px;max-width:1200px;margin:0 auto;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:28px;width:auto}
+.brand .title{font-weight:800;font-size:20px;color:var(--brand)}
+.nav{display:flex;gap:22px;flex:1;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{color:var(--brand)}
+.actions{display:flex;align-items:center;gap:12px}
+.search-btn{display:flex;align-items:center;justify-content:center;height:38px;width:38px;border-radius:50%;border:1px solid #e6e6e6;background:#fff}
+.search-btn svg{height:18px;width:18px;color:#333}
+.cta{background:var(--brand);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:700}
+.burger{display:none;background:transparent;border:none;padding:8px}
+.burger span{display:block;height:2px;width:20px;background:#111;margin:4px 0;border-radius:2px}
+@media (max-width:960px){
+  .nav{display:none}
+  .burger{display:block}
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+}
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.footer-head {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: #fff;
+}
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-list li {
+  margin: 6px 0;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  color: #ff2b85;
+}
+.social .social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.social-row a svg {
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+}
+.social-row a:hover svg {
+  fill: #ff2b85;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+.copyright {
+  margin: 0;
+  color: #cfcfcf;
+}
+.policy {
+  color: #fff;
+  text-decoration: none;
+}
+.policy:hover {
+  color: #ff2b85;
+}
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+:root{
+  --pink-500:#e4007c;       /* brand pink for accents */
+  --pink-100:#ffcfe2;       /* soft pink (optional) */
+  --bg-hero:#f9a8b6;        /* base hero background close to reference */
+  --text:#111;
+  --muted:#2a2a2a;
+  --radius-pill:999px;
+}
+
+/* Section */
+.jobs-hero{
+  background: #f8a8b7;            /* solid pink background */
+  padding: clamp(2rem, 5vw, 3rem) 1rem;
+  overflow: hidden;
+}
+.jobs-hero__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr; /* text a touch wider */
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+/* Headings */
+.jobs-hero__title{
+  margin: 0 0 .5rem 0;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.05;
+  letter-spacing: .2px;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+}
+.jobs-hero__subtitle{
+  margin: 0 0 1.25rem 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+}
+
+/* Search bar (pill) */
+.jobs-hero__search{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem;
+  background: #fff;
+  border-radius: var(--radius-pill);
+  padding: 10px 10px 10px 18px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.15);
+  width: min(640px, 100%);
+}
+.jobs-hero__input{
+  border: 0;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text);
+}
+.jobs-hero__input::placeholder{ color:#6b7280; }
+.jobs-hero__btn{
+  border: 4px solid #fff;         /* white ring like the reference */
+  background: var(--pink-500);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  box-shadow: 0 10px 22px rgba(228,0,124,.35);
+}
+.jobs-hero__btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(228,0,124,.45);
+}
+
+/* Right image */
+.jobs-hero__art{
+  margin: 0;
+  display: grid;
+  place-items: center end;
+}
+.jobs-hero__art img{
+  width: min(560px, 100%);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .jobs-hero__container{
+    grid-template-columns: 1fr;
+  }
+  .jobs-hero__art{
+    place-items: center;
+    margin-top: 1rem;
+  }
+  .jobs-hero{
+    text-align: left; /* keep left-aligned text like the reference */
+  }
+}
+
+
+:root{
+  --text:#111;
+  --muted:#333;
+  --soft:#f7f7f9;
+  --maxw: 1100px;
+}
+
+/* Section wrapper */
+.mission{
+  background: #fff;
+  padding: 3rem 1rem;
+}
+
+/* Inner container */
+.mission__container{
+  width: min(var(--maxw), 92%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Headline (quoted mission) */
+.mission__headline{
+  margin: 0 0 1.25rem;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.15;
+  font-size: clamp(1.6rem, 4.8vw, 2.4rem);
+  letter-spacing: .2px;
+}
+
+/* Paragraphs */
+.mission__para{
+  margin: 0 auto 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: clamp(1rem, 1.6vw, 1.05rem);
+  max-width: 98ch; /* comfortable reading width */
+}
+
+/* Optional subtle separator style if used between sections */
+.mission + *{
+  /* add top spacing if desired on the next section */
+  /* margin-top: 0; */
+}
+
+/* Responsive fine-tuning */
+@media (max-width: 640px){
+  .mission{ padding: 2.25rem 1rem; }
+  .mission__para{ max-width: 115ch; }
+}
+
+
+
+
+:root {
+  --pink: #e4007c;
+  --text: #111;
+  --muted: #555;
+  --bg: #fff;
+  --soft-bg: #f7f7f9;
+  --radius: 16px;
+}
+
+/* Section wrapper */
+.love-section {
+  background: var(--soft-bg);
+  padding: 3rem 1rem;
+}
+
+/* Container: two-column layout */
+.love__container {
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+/* Left content */
+.love__heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.love__desc {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* CTA button */
+.love__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(228, 0, 124, 0.3);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+.love__cta img {
+  width: 32px;
+  height: auto;
+}
+.love__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228, 0, 124, 0.4);
+}
+.love__cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Right image */
+.love__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .love__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .love__image {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+:root{
+  --pink:#e4007c;
+  --text:#111;
+  --muted:#555;
+  --soft:#f4f5f7;     /* card background */
+  --rail:#f9a8b7;     /* decorative pink rail behind image */
+  --radius-lg:20px;
+  --radius-pill:999px;
+}
+
+/* Section wrapper */
+.be-yourself{
+  background:#fff;
+  padding: 2.5rem 1rem;
+}
+
+/* Card‑like container */
+.by__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  background: var(--soft);
+  border-radius: var(--radius-lg);
+  padding: clamp(18px, 2.8vw, 28px);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* image a bit wider */
+  gap: clamp(18px, 3.2vw, 36px);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left: media block */
+.by__media{
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* decorative pink rail behind the image */
+.by__media::before{
+  content:"";
+  position:absolute;
+  inset: -24px -28px -24px auto; /* left rail peeking outside */
+  width: 42px;
+  background: var(--rail);
+  border-radius: 12px;
+  z-index: -1;
+}
+.by__media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: calc(var(--radius-lg) - 4px);
+}
+
+/* Right: text */
+.by__content{}
+.by__heading{
+  margin: 0 0 .75rem;
+  font-weight: 900;
+  color: var(--pink);
+  font-size: clamp(1.8rem, 4.2vw, 2.4rem);
+  line-height: 1.15;
+}
+.by__desc{
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* CTA pill with small mascot icon */
+.by__cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  padding: .95rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(228,0,124,.30);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.by__cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228,0,124,.40);
+}
+.by__cta:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.by__cta img{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .by__container{
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .by__media::before{
+    inset: auto auto -28px -28px;
+    width: 100%;
+    height: 42px;      /* rail becomes a bottom strip on small screens */
+  }
+  .by__cta img{ width: 32px; height: 32px; }
+}
+
+
+
+
+:root{
+  --pink:#e4007c;
+  --pink-bg:#f8a8b7;      /* hero-like pink background */
+  --text:#111;
+  --muted:#666;
+  --card-bg:#fff;
+  --card-border:#ffffff80; /* soft white border */
+  --radius-lg:22px;
+  --radius-md:18px;
+}
+
+/* Section */
+.metrics{
+  background: var(--pink-bg);
+  padding: 2.8rem 1rem;
+}
+
+/* Container */
+.metrics__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+
+/* Heading */
+.metrics__heading{
+  text-align: center;
+  margin: 0 0 1.6rem;
+  font-weight: 900;
+  color: var(--text);
+  font-size: clamp(1.6rem, 4.8vw, 2.4rem);
+}
+
+/* Two-column content */
+.metrics__content{
+  display: grid;
+  grid-template-columns: 1fr 540px; /* left grid + right image */
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+/* Stat grid (2×2) */
+.metrics__grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 3vw, 24px);
+}
+
+/* Card */
+.metric-card{
+  background: transparent;
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  border: 4px solid var(--card-border);      /* outer rounded border */
+}
+.metric-card__inner{
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: clamp(22px, 3.6vw, 30px);
+  text-align: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+.metric-card__value{
+  color: var(--pink);
+  font-weight: 900;
+  letter-spacing: .4px;
+  font-size: clamp(1.4rem, 4.8vw, 2.2rem);
+  line-height: 1.1;
+}
+.metric-card__label{
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: clamp(.9rem, 2.2vw, 1rem);
+  letter-spacing: .4px;
+}
+
+/* Right image */
+.metrics__image{
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: transparent;
+}
+.metrics__image img{
+  width: min(520px, 100%);
+  height: auto;
+  object-fit: contain; /* single, straight image */
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .metrics__content{
+    grid-template-columns: 1fr;
+  }
+  .metrics__image{
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 640px){
+  .metrics__grid{
+    grid-template-columns: 1fr; /* stack cards on small screens */
+  }
+}
+
+
+.chev { color: var(--muted); margin-left: 6px }
+
+.hero {
+  padding: 32px 0 8px;
+  background: var(--bg-soft);
+}
+.hero__title {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+}
+.hero__count {
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 22px;
+  margin: 10px 0 0;
+}
+
+.filters {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.filters__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 16px 0;
+}
+.filter {
+  position: relative;
+}
+.filter__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fff;
+  color: var(--text);
+  border: 2px solid #1a1a1a10;
+  border-radius: 24px;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filter__btn::after {
+  content: "▾";
+  color: var(--muted);
+}
+.filter__menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  padding: 6px;
+  display: none;
+}
+.filter__menu.is-open { display: grid; gap: 2px }
+.filter__menu button {
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.filter__menu button:hover { background: #f4f4f6 }
+
+.cards {
+  padding: 32px 0 40px;
+}
+.cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.job-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid #e4007c40;
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.job-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--pink);
+  font-weight: 700;
+}
+.fav {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+.job-card__title {
+  margin: 18px 0 12px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.job-card__meta {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.job-card__cta {
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 10px 16px;
+  box-shadow: 0 8px 20px rgba(228,0,124,.25);
+}
+
+.pager {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+.pager__btn {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.pager__list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pager__list button {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.pager__list button.is-active {
+  border-color: var(--pink);
+  color: var(--pink);
+  font-weight: 700;
+}
+
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand__img {
+  height: 40px; /* Adjust as needed */
+  width: auto;
+  display: block;
+}
+
+
+</style>
+<body>
+    <header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="imgi_1_foodpanda_logo_2023.png" alt="Logo">
+      
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="partners.html">Partners</a>
+      <a href="ads.html">panda ads</a>
+      <a href="contact.html">Contact</a>
+      <a href="careers.html">Careers</a>
+    </nav>
+    <button class="cta">Choose location</button>
+  </div>
+</header>
+
+
+
+
+<section class="jobs-hero" aria-labelledby="jobs-hero-title">
+  <div class="jobs-hero__container">
+    <!-- Left: Text + Search -->
+    <div class="jobs-hero__content">
+      <h1 id="jobs-hero-title" class="jobs-hero__title">Hungry to make an impact?</h1>
+      <p class="jobs-hero__subtitle">There’s always room at our table.</p>
+
+      <form class="jobs-hero__search" role="search" aria-label="Job search">
+        <input
+          class="jobs-hero__input"
+          type="search"
+          name="q"
+          placeholder="Start your job search here"
+          aria-label="Search jobs"
+        />
+        <button class="jobs-hero__btn" aria-label="Search">
+          <!-- magnifier icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M20 20l-4.2-4.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Right: Single image -->
+    <figure class="jobs-hero__art">
+      <!-- Replace with your asset -->
+      <img src="imgi_10_.png" alt="">
+    </figure>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="mission" aria-labelledby="mission-title">
+  <div class="mission__container">
+    <h2 id="mission-title" class="mission__headline">
+      “To be the most loved everyday food and groceries destination”
+    </h2>
+
+    <p class="mission__para">
+      …that’s our mission at foodpanda. Whether it’s by delivering food on our signature pink bikes,
+      providing insights into the newest food trends, or showcasing local favorite restaurants,
+      we’re on a mission to redefine how food, people, culture and tech are connected.
+    </p>
+
+    <p class="mission__para">
+      Our parent company, Delivery Hero, is a global leader in the food delivery industry processing
+      over 3&nbsp;million orders every day and operating in 40+ markets worldwide,
+      with 18,000 employees and approximately 500,000+ restaurant partners.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="love-section" aria-labelledby="love-title">
+  <div class="love__container">
+    <!-- Left: Text + CTA -->
+    <div class="love__content">
+      <h2 id="love-title" class="love__heading">We love what we do</h2>
+      <p class="love__desc">
+        foodpanda is the largest food and grocery delivery platform in Asia, outside of China.
+        Operating in more than 400 cities across 11 markets, we continue to expand and grow in our core
+        food delivery business, as well as in new verticals like grocery deliveries, with a strong tech
+        infrastructure at our core. From our restaurants-partners, cloud kitchens and cloud grocery stores —
+        foodpanda is just one tap away, getting everything you need into your hands quickly and conveniently!
+      </p>
+        <a href="#" class="by__cta">
+        <img src="imgi_3_pau-pau-button.png" alt="" aria-hidden="true">
+        <span>Find out more</span>
+      </a>
+    </div>
+
+    <!-- Right: Image -->
+    <figure class="love__image">
+      <img src="imgi_4_0bc488e5-8713-4a1f-9d0f-08dc1849ff6f.jpg" alt="">
+    </figure>
+  </div>
+</section>
+
+
+
+
+
+<section class="be-yourself" aria-labelledby="by-title">
+  <div class="by__container">
+    <!-- Left: Large image with rounded corners and decorative pink rail -->
+    <figure class="by__media">
+      <!-- Replace with your image -->
+      <img src="imgi_5_5ad05d5a-d3c2-4d60-e1e9-08dbd6375a5b.jpg" alt="Team at an outdoor community event">
+    </figure>
+
+    <!-- Right: Copy + CTA -->
+    <div class="by__content">
+      <h2 id="by-title" class="by__heading">You can be yourself at foodpanda</h2>
+      <p class="by__desc">
+        With over 50 nationalities and 20 languages spoken across our markets, we pride ourselves on our focus on
+        diversity and inclusion. We are able to exchange and bring to the table the best practices (and food!)
+        from each corner of the world.
+      </p>
+
+      <a href="#" class="by__cta">
+        <img src="imgi_3_pau-pau-button.png" alt="" aria-hidden="true">
+        <span>Find out more</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="metrics" aria-labelledby="metrics-title">
+  <div class="metrics__container">
+    <h2 id="metrics-title" class="metrics__heading">A diverse and high-performing team</h2>
+
+    <div class="metrics__content">
+      <!-- Left: Stat cards -->
+      <div class="metrics__grid" role="list">
+        <article class="metric-card" role="listitem" aria-label="Employees">
+          <div class="metric-card__inner">
+            <div class="metric-card__value">7,000 +</div>
+            <div class="metric-card__label">EMPLOYEES</div>
+          </div>
+        </article>
+
+        <article class="metric-card" role="listitem" aria-label="Cities">
+          <div class="metric-card__inner">
+            <div class="metric-card__value">400 +</div>
+            <div class="metric-card__label">CITIES</div>
+          </div>
+        </article>
+
+        <article class="metric-card" role="listitem" aria-label="Nationalities">
+          <div class="metric-card__inner">
+            <div class="metric-card__value">50 +</div>
+            <div class="metric-card__label">NATIONALITIES</div>
+          </div>
+        </article>
+
+        <article class="metric-card" role="listitem" aria-label="Languages">
+          <div class="metric-card__inner">
+            <div class="metric-card__value">20 +</div>
+            <div class="metric-card__label">LANGUAGES</div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right: Single mascot image -->
+      <figure class="metrics__image" aria-label="Mascot">
+        <img src="imgi_6_stats-image-removebg-preview.png" alt="">
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Job results</h1>
+        <p class="hero__count">207 result(s)</p>
+      </div>
+    </section>
+
+    <section class="filters">
+      <div class="container filters__row">
+        <div class="filter">
+          <button class="filter__btn" aria-expanded="false">Location</button>
+          <div class="filter__menu" role="listbox">
+            <button role="option">Karachi</button>
+            <button role="option">Lahore</button>
+            <button role="option">Islamabad</button>
+            <button role="option">Remote</button>
+          </div>
+        </div>
+        <div class="filter">
+          <button class="filter__btn" aria-expanded="false">Job Category</button>
+          <div class="filter__menu" role="listbox">
+            <button role="option">Engineering</button>
+            <button role="option">Marketing</button>
+            <button role="option">Operations</button>
+            <button role="option">Finance</button>
+          </div>
+        </div>
+        <div class="filter">
+          <button class="filter__btn" aria-expanded="false">Job type</button>
+          <div class="filter__menu" role="listbox">
+            <button role="option">Full-time</button>
+            <button role="option">Part-time</button>
+            <button role="option">Internship</button>
+            <button role="option">Contract</button>
+          </div>
+        </div>
+        <div class="filter">
+          <button class="filter__btn" aria-expanded="false">Time Type</button>
+          <div class="filter__menu" role="listbox">
+            <button role="option">Day</button>
+            <button role="option">Evening</button>
+            <button role="option">Night</button>
+            <button role="option">Flexible</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="container cards__grid">
+        <article class="job-card">
+          <div class="job-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e4007c" stroke-width="2"/><circle cx="9" cy="10" r="1.5" fill="#e4007c"/><circle cx="15" cy="10" r="1.5" fill="#e4007c"/><path d="M7 15c1.5 1.2 3.3 2 5 2s3.5-.8 5-2" stroke="#e4007c" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>foodpanda</span>
+          </div>
+          <button class="fav" aria-label="Save job">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15.5a.5.5 0 01-.8.4L12 16l-6.2 5a.5.5 0 01-.8-.4V5a1 1 0 011-1z" stroke="#e4007c" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+          <h3 class="job-card__title">Associate, Account Management</h3>
+          <ul class="job-card__meta">
+            <li>Karachi, Pakistan</li>
+            <li>Full-time</li>
+          </ul>
+          <a href="#" class="job-card__cta">View details</a>
+        </article>
+
+        <article class="job-card">
+          <div class="job-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e4007c" stroke-width="2"/><circle cx="9" cy="10" r="1.5" fill="#e4007c"/><circle cx="15" cy="10" r="1.5" fill="#e4007c"/><path d="M7 15c1.5 1.2 3.3 2 5 2s3.5-.8 5-2" stroke="#e4007c" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>foodpanda</span>
+          </div>
+          <button class="fav" aria-label="Save job">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15.5a.5.5 0 01-.8.4L12 16l-6.2 5a.5.5 0 01-.8-.4V5a1 1 0 011-1z" stroke="#e4007c" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+          <h3 class="job-card__title">Specialist, Logistics</h3>
+          <ul class="job-card__meta">
+            <li>Lahore, Pakistan</li>
+            <li>Full-time</li>
+          </ul>
+          <a href="#" class="job-card__cta">View details</a>
+        </article>
+
+        <article class="job-card">
+          <div class="job-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e4007c" stroke-width="2"/><circle cx="9" cy="10" r="1.5" fill="#e4007c"/><circle cx="15" cy="10" r="1.5" fill="#e4007c"/><path d="M7 15c1.5 1.2 3.3 2 5 2s3.5-.8 5-2" stroke="#e4007c" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>foodpanda</span>
+          </div>
+          <button class="fav" aria-label="Save job">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15.5a.5.5 0 01-.8.4L12 16l-6.2 5a.5.5 0 01-.8-.4V5a1 1 0 011-1z" stroke="#e4007c" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+          <h3 class="job-card__title">Specialist, Demand Planning</h3>
+          <ul class="job-card__meta">
+            <li>Islamabad, Pakistan</li>
+            <li>Full-time</li>
+          </ul>
+          <a href="#" class="job-card__cta">View details</a>
+        </article>
+      </div>
+
+      
+    </section>
+
+    <section class="cards">
+      <div class="container cards__grid">
+        <article class="job-card">
+          <div class="job-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e4007c" stroke-width="2"/><circle cx="9" cy="10" r="1.5" fill="#e4007c"/><circle cx="15" cy="10" r="1.5" fill="#e4007c"/><path d="M7 15c1.5 1.2 3.3 2 5 2s3.5-.8 5-2" stroke="#e4007c" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>foodpanda</span>
+          </div>
+          <button class="fav" aria-label="Save job">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15.5a.5.5 0 01-.8.4L12 16l-6.2 5a.5.5 0 01-.8-.4V5a1 1 0 011-1z" stroke="#e4007c" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+          <h3 class="job-card__title">Lead Vendor Sales</h3>
+          <ul class="job-card__meta">
+            <li>Karachi, Pakistan</li>
+            <li>Full-time</li>
+          </ul>
+          <a href="#" class="job-card__cta">View details</a>
+        </article>
+
+        <article class="job-card">
+          <div class="job-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e4007c" stroke-width="2"/><circle cx="9" cy="10" r="1.5" fill="#e4007c"/><circle cx="15" cy="10" r="1.5" fill="#e4007c"/><path d="M7 15c1.5 1.2 3.3 2 5 2s3.5-.8 5-2" stroke="#e4007c" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>foodpanda</span>
+          </div>
+          <button class="fav" aria-label="Save job">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15.5a.5.5 0 01-.8.4L12 16l-6.2 5a.5.5 0 01-.8-.4V5a1 1 0 011-1z" stroke="#e4007c" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+          <h3 class="job-card__title">Specialist, Field Sales</h3>
+          <ul class="job-card__meta">
+            <li>Lahore, Pakistan</li>
+            <li>Full-time</li>
+          </ul>
+          <a href="#" class="job-card__cta">View details</a>
+        </article>
+
+        <article class="job-card">
+          <div class="job-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e4007c" stroke-width="2"/><circle cx="9" cy="10" r="1.5" fill="#e4007c"/><circle cx="15" cy="10" r="1.5" fill="#e4007c"/><path d="M7 15c1.5 1.2 3.3 2 5 2s3.5-.8 5-2" stroke="#e4007c" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>foodpanda</span>
+          </div>
+          <button class="fav" aria-label="Save job">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h12a1 1 0 011 1v15.5a.5.5 0 01-.8.4L12 16l-6.2 5a.5.5 0 01-.8-.4V5a1 1 0 011-1z" stroke="#e4007c" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+          <h3 class="job-card__title">Product Manager (Pickup)</h3>
+          <ul class="job-card__meta">
+            <li>Islamabad, Pakistan</li>
+            <li>Full-time</li>
+          </ul>
+          <a href="#" class="job-card__cta">View details</a>
+        </article>
+      </div>
+
+      <div class="container pager">
+        <button class="pager__btn" aria-label="Previous page">Prev</button>
+        <ul class="pager__list" aria-label="Pages">
+          <li><button class="is-active">1</button></li>
+          <li><button>2</button></li>
+          <li><button>3</button></li>
+          <li><button>...</button></li>
+          <li><button>10</button></li>
+        </ul>
+        <button class="pager__btn" aria-label="Next page">Next</button>
+      </div>
+    </section>
+  
+
+    <footer class="site-footer" aria-label="Footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="/">
+        <img src="imgi_1_foodpanda_logo_2023.png" alt="foodpanda logo">
+      </a>
+
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-nav">
+          <h3 id="footer-nav" class="footer-head">Navigate</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="newsroom.html">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-collab">
+          <h3 id="footer-collab" class="footer-head">Collaborate</h3>
+          <ul class="footer-list">
+            <li><a href="/careers">Explore careers</a></li>
+            <li><a href="/riders">Become a rider</a></li>
+            <li><a href="/for-business">Feed your team</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col social" aria-labelledby="footer-social">
+          <h3 id="footer-social" class="footer-head">Follow us on</h3>
+          <div class="social-row">
+            <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.55 17.52 2 12.06 2 6.55 2 2 6.55 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.55v1.86h2.78l-.44 2.91h-2.34v7.03C18.34 21.19 22 17.05 22 12.06z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.47c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.57H9.41V9.75h3.41v1.47h.05c.47-.89 1.63-1.83 3.36-1.83 3.6 0 4.27 2.37 4.27 5.45v5.61zM5.34 8.28c-1.14 0-2.06-.93-2.06-2.06s.92-2.05 2.06-2.05c1.13 0 2.05.92 2.05 2.05s-.92 2.06-2.05 2.06zM7.11 20.45H3.57V9.75h3.54v10.7zM22.88 0H1.12C.5 0 0 .5 0 1.12v21.76C0 23.5.5 24 1.12 24h21.76c.62 0 1.12-.5 1.12-1.12V1.12C24 .5 23.5 0 22.88 0z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.instagram.com" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.84.07 1.24.06 2.07.26 2.55.44.64.25 1.11.55 1.6 1.04.49.49.8.96 1.04 1.6.18.48.38 1.31.44 2.55.07 1.26.07 1.64.07 4.84s0 3.58-.07 4.84c-.06 1.24-.26 2.07-.44 2.55-.25.64-.55 1.11-1.04 1.6-.49.49-.96.8-1.6 1.04-.48.18-1.31.38-2.55.44-1.26.07-1.64.07-4.84.07s-3.58 0-4.84-.07c-1.24-.06-2.07-.26-2.55-.44-.64-.25-1.11-.55-1.6-1.04-.49-.49-.8-.96-1.04-1.6-.18-.48-.38-1.31-.44-2.55-.07-1.26-.07-1.64-.07-4.84s0-3.58.07-4.84c.06-1.24.26-2.07.44-2.55.25-.64.55-1.11 1.04-1.6.49-.49.96-.8 1.6-1.04.48-.18 1.31-.38 2.55-.44C8.42 2.16 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33 0 7.05.07 5.77.13 4.84.34 4.09.63A5.4 5.4 0 0 0 2 2.01c-.7.7-1.38 1.69-1.68 3.07-.29.75-.5 1.68-.56 2.96C-.31 9.33-.31 9.74-.31 12s0 2.67.07 3.95c.06 1.28.27 2.21.56 2.96.3 1.39.98 2.37 1.68 3.07.7.7 1.69 1.38 3.07 1.68.75.29 1.68.5 2.96.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.28-.06 2.21-.27 2.96-.56 1.39-.3 2.37-.98 3.07-1.68.7-.7 1.38-1.69 1.68-3.07.29-.75.5-1.68.56-2.96.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.28-.27-2.21-.56-2.96-.3-1.39-.98-2.37-1.68-3.07-.7-.7-1.69-1.38-3.07-1.68-.75-.29-1.68-.5-2.96-.56C15.67 0 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">Copyright © <span id="year">2025</span> foodpanda</p>
+      <a class="policy" href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

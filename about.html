@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        
+:root{
+  --brand:#ff2b85;
+  --text:#111;
+  --muted:#555;
+  --bg:#fff;
+  --card:#f5b7cd;
+  --card-radius:18px;
+  --overlay-start:rgba(0,0,0,0);
+  --overlay-end:rgba(0,0,0,.75)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.header-inner{display:flex;align-items:center;gap:24px;max-width:1200px;margin:0 auto;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:28px;width:auto}
+.brand .title{font-weight:800;font-size:20px;color:var(--brand)}
+.nav{display:flex;gap:22px;flex:1;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{color:var(--brand)}
+.actions{display:flex;align-items:center;gap:12px}
+.search-btn{display:flex;align-items:center;justify-content:center;height:38px;width:38px;border-radius:50%;border:1px solid #e6e6e6;background:#fff}
+.search-btn svg{height:18px;width:18px;color:#333}
+.cta{background:var(--brand);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:700}
+.burger{display:none;background:transparent;border:none;padding:8px}
+.burger span{display:block;height:2px;width:20px;background:#111;margin:4px 0;border-radius:2px}
+@media (max-width:960px){
+  .nav{display:none}
+  .burger{display:block}
+}
+
+
+
+
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 48vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.about-hero__media {
+  position: relative;
+  width: 100%;
+  height: 56vh;
+  min-height: 420px;
+  max-height: 720px;
+}
+
+.about-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  left: 6vw;
+  bottom: 8vh;
+  color: #fff;
+  pointer-events: none;
+}
+
+.about-hero__title {
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.02;
+  font-size: clamp(36px, 7vw, 92px);
+  letter-spacing: 0;
+}
+
+@media (max-width: 900px) {
+  .about-hero__media {
+    height: 48vh;
+    min-height: 360px;
+  }
+  .about-hero__overlay {
+    left: 5vw;
+    bottom: 6vh;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-hero__overlay {
+    left: 4vw;
+    bottom: 4vh;
+  }
+  .about-hero__title {
+    font-size: clamp(32px, 9vw, 64px);
+  }
+}
+
+
+
+.about-content {
+  background: #fff;
+  padding: 48px 0 60px;
+}
+.ac-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.ac-title {
+  margin: 0 0 18px;
+  font-weight: 900;
+  line-height: 1.05;
+  font-size: clamp(28px, 5.2vw, 48px);
+  color: #111;
+}
+.ac-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #111;
+  max-width: 900px;
+  margin: 0 0 22px;
+}
+@media (max-width: 900px) {
+  .about-content { padding: 40px 0 52px; }
+  .ac-inner { padding: 0 20px; }
+  .ac-text { font-size: 17px; }
+}
+@media (max-width: 560px) {
+  .about-content { padding: 32px 0 44px; }
+  .ac-inner { padding: 0 16px; }
+  .ac-text { font-size: 16px; line-height: 1.65; }
+}
+
+
+
+
+
+
+
+
+:root {
+  --gap: 2rem;
+  --card-max-width: 1100px;
+  --dot-size: 10px;
+  --accent: #e4007c;
+}
+
+.carousel-section {
+  padding: 4rem 1rem;
+  background: #f7f7f7;
+}
+
+.carousel {
+  max-width: var(--card-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel__track-wrapper {
+  overflow: hidden;
+  grid-column: 1 / -1;
+}
+
+.carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  align-items: stretch;
+  transition: transform 500ms ease;
+}
+
+.carousel__slide {
+  display: flex;
+  align-items: stretch;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.card__text { padding-right: 1rem; }
+.card__title { font-size: clamp(1.6rem, 2.5vw, 2.4rem); margin: 0 0 0.5rem; font-weight: 800; }
+.card__body { font-size: clamp(1rem, 1.4vw, 1.15rem); color: #333; line-height: 1.6; }
+
+.card__image { margin: 0; }
+.card__image img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+.carousel__arrow {
+  appearance: none;
+  border: none;
+  background: #fff;
+  color: #111;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease;
+}
+.carousel__arrow:hover { transform: translateY(-2px); }
+.carousel__arrow--prev { grid-column: 1; }
+.carousel__arrow--next { grid-column: 3; }
+
+.carousel__dots {
+  grid-column: 2;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.carousel__dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border: none;
+  background: #ddd;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.carousel__dot[aria-selected="true"] { background: var(--accent); }
+
+@media (max-width: 900px) {
+  .card { grid-template-columns: 1fr; }
+}
+
+
+
+/* === Our values (pills) === */
+
+
+.values-pills{
+  background: var(--white);
+  padding: clamp(40px, 6vw, 80px) 16px;
+}
+
+.values-pills__inner{
+  max-width: 1100px; /* match your container width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.values-pills h2{
+  margin: 0 0 clamp(16px, 3vw, 24px);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  font-weight: 900;
+  color: var(--text);
+}
+
+/* Primary pill row */
+.values-pills__primary{
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(18px, 3.5vw, 28px);
+}
+
+/* Pills container (outlined) */
+.values-pills__list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 16px);
+  justify-content: center;
+}
+
+/* Base pill */
+.pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+/* Filled (primary) */
+.pill--filled{
+  background: transparent;
+  color: #ff2b85;
+  border: 2px solid #ff2b85;
+  box-shadow: 0 4px 18px rgba(0,0,0,.12);
+}
+
+/* Outlined (secondary) */
+.pill--outline{
+  background: transparent;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  cursor: pointer;
+}
+
+/* Hover / focus styles */
+.pill--outline:hover{
+  background: rgba(255, 43, 133, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 43, 133, 0.15);
+}
+
+.pill--outline:focus-visible,
+.pill--filled:focus-visible{
+  outline: 2px solid rgba(255,43,133,.45);
+  outline-offset: 2px;
+}
+
+/* Wrapping behavior on very small screens */
+@media (max-width: 520px){
+  .pill{
+    padding: 12px 16px;
+    white-space: normal;      /* allow 2 lines if needed */
+    line-height: 1.2;
+  }
+}
+
+
+
+.site-footer {
+  background: #000;
+  color: #fff;
+}
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.footer-head {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: #fff;
+}
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-list li {
+  margin: 6px 0;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  color: #ff2b85;
+}
+.social .social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.social-row a svg {
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+}
+.social-row a:hover svg {
+  fill: #ff2b85;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+.copyright {
+  margin: 0;
+  color: #cfcfcf;
+}
+.policy {
+  color: #fff;
+  text-decoration: none;
+}
+.policy:hover {
+  color: #ff2b85;
+}
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+:root {
+  --brand-pink: #e4007c;
+  --text-color: #111;
+  --muted: #333;
+  --bg: #f7f7f7;
+  --radius: 16px;
+}
+
+.join-team {
+  background: var(--bg);
+  padding: 4rem 1rem;
+}
+
+.join-team__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.join-team__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 1rem;
+}
+
+.join-team__desc {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 2rem;
+  max-width: 52ch;
+}
+
+.join-team__cta {
+  display: inline-block;
+  background: var(--brand-pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  box-shadow: 0 8px 20px rgba(228, 0, 124, 0.25);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.join-team__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(228, 0, 124, 0.35);
+}
+
+.join-team__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .join-team__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .join-team__desc {
+    max-width: none;
+  }
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="imgi_1_foodpanda_logo_2023.png" alt="Logo">
+      
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="partners.html">Partners</a>
+      <a href="ads.html">panda ads</a>
+      <a href="contact.html">Contact</a>
+      <a href="careers.html">Careers</a>
+    </nav>
+    <button class="cta">Choose location</button>
+  </div>
+</header>
+
+
+<section class="about-hero">
+  <div class="about-hero__media">
+    <img class="about-hero__img" src="imgi_14_about-foodpanda (1).webp" alt="foodpanda team and riders">
+  </div>
+  <div class="about-hero__overlay">
+    <h1 class="about-hero__title">About<br>foodpanda</h1>
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+
+<section class="about-content">
+  <div class="ac-inner">
+    <h2 class="ac-title">From food delivery to your daily convenience companion.</h2>
+
+    <p class="ac-text">
+      A subsidiary of Delivery Hero, foodpanda launched in Singapore in 2014 as a food delivery platform.
+      Dedicated to helping customers get their tasty favourites fast, it quickly won the hearts and minds of customers in APAC.
+    </p>
+
+    <p class="ac-text">
+      Powered by tech and operational excellence, foodpanda has been growing its quick‑commerce footprint in more than 400 cities
+      across 11 markets in Asia – Singapore, Hong Kong, Thailand, Malaysia, Pakistan, Taiwan, Philippines, Bangladesh, Laos,
+      Cambodia, and Myanmar.
+    </p>
+
+    <p class="ac-text">
+      Thanks to dedicated partners, riders, and a team united by shared values, foodpanda is now providing millions with a convenient
+      way to get food and groceries in a few taps.
+    </p>
+  </div>
+</section>
+<br>
+<br>
+<br>
+
+
+
+
+
+<section class="carousel-section" aria-label="Carousel">
+  <div class="carousel" data-autoplay="true" data-delay="4000">
+    <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous" data-dir="-1">←</button>
+
+    <div class="carousel__track-wrapper">
+      <ul class="carousel__track" role="list">
+        <li class="carousel__slide" role="listitem" aria-label="Slide 1 of 3" tabindex="-1">
+          <article class="card">
+            <div class="card__text">
+              <h2 class="card__title">Customers come first</h2>
+              <p class="card__body">We enable customers to pick up takeaway meals, skip grocery trips, and send parcels. Customer needs are the core of our business.</p>
+            </div>
+            <figure class="card__image">
+              <img src="imgi_19_fp-about-2.webp" alt="Pickup order being handed over">
+            </figure>
+          </article>
+        </li>
+
+        <li class="carousel__slide" role="listitem" aria-label="Slide 2 of 3" tabindex="-1">
+          <article class="card">
+            <div class="card__text">
+              <h2 class="card__title">Delivering delight</h2>
+              <p class="card__body">Fast, reliable service with transparent tracking and real‑time updates for every order.</p>
+            </div>
+            <figure class="card__image">
+              <img src="imgi_17_fp-about-2.webp" alt="Courier preparing delivery">
+            </figure>
+          </article>
+        </li>
+
+        <li class="carousel__slide" role="listitem" aria-label="Slide 3 of 3" tabindex="-1">
+          <article class="card">
+            <div class="card__text">
+              <h2 class="card__title">Convenience, always</h2>
+              <p class="card__body">From meals to essentials, we simplify everyday moments with dependable delivery options.</p>
+            </div>
+            <figure class="card__image">
+              <img src="imgi_15_fp-about-4 (1).webp" alt="Groceries on kitchen counter">
+            </figure>
+          </article>
+        </li>
+      </ul>
+    </div>
+
+    <button class="carousel__arrow carousel__arrow--next" aria-label="Next" data-dir="1">→</button>
+
+    <div class="carousel__dots" role="tablist" aria-label="Slide selectors">
+      <button class="carousel__dot" role="tab" aria-selected="true" data-slide="0"></button>
+      <button class="carousel__dot" role="tab" aria-selected="false" data-slide="1"></button>
+      <button class="carousel__dot" role="tab" aria-selected="false" data-slide="2"></button>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<br>
+
+
+
+<section class="values-pills" aria-labelledby="values-title">
+  <div class="values-pills__inner">
+    <h2 id="values-title">Our values</h2>
+
+    <!-- Primary value (filled) -->
+    <div class="values-pills__primary">
+      <span class="pill pill--filled" role="listitem">
+        prioritise, decide, deliver
+      </span>
+    </div>
+
+    <!-- Secondary values (outlined) -->
+    <div class="values-pills__list" role="list" aria-label="Values list">
+      <button class="pill pill--outline" type="button" role="listitem">
+        start with customer, end with customer
+      </button>
+
+      <button class="pill pill--outline" type="button" role="listitem">
+        own it end‑to‑end
+      </button>
+
+      <button class="pill pill--outline" type="button" role="listitem">
+        challenge the status quo
+      </button>
+
+      <button class="pill pill--outline" type="button" role="listitem">
+        we before me
+      </button>
+
+      <button class="pill pill--outline" type="button" role="listitem">
+        plan for tomorrow, focus on today
+      </button>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<br>
+
+
+
+<section class="join-team">
+  <div class="join-team__inner">
+    <div class="join-team__content">
+      <h2 class="join-team__title">Join the panda team!</h2>
+      <p class="join-team__desc">
+        Hungry for growth? There’s a seat at our table! We’re looking for the best in tech, marketing, sales, logistics, account management and more.
+        Explore career opportunities at foodpanda now.
+      </p>
+      <a href="#jobs.html" class="join-team__cta" aria-label="View jobs">View jobs</a>
+    </div>
+    <div class="join-team__media">
+      <img src="imgi_2_fp-home-3.webp" alt="Team collaborating in a meeting room with sticky notes on the wall">
+    </div>
+  </div>
+</section>
+<br>
+<br>
+
+<footer class="site-footer" aria-label="Footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="/">
+        <img src="imgi_1_foodpanda_logo_2023.png" alt="foodpanda logo">
+      </a>
+
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-nav">
+          <h3 id="footer-nav" class="footer-head">Navigate</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="newsroom.html">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-collab">
+          <h3 id="footer-collab" class="footer-head">Collaborate</h3>
+          <ul class="footer-list">
+            <li><a href="/careers">Explore careers</a></li>
+            <li><a href="/riders">Become a rider</a></li>
+            <li><a href="/for-business">Feed your team</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col social" aria-labelledby="footer-social">
+          <h3 id="footer-social" class="footer-head">Follow us on</h3>
+          <div class="social-row">
+            <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.55 17.52 2 12.06 2 6.55 2 2 6.55 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.55v1.86h2.78l-.44 2.91h-2.34v7.03C18.34 21.19 22 17.05 22 12.06z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.47c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.57H9.41V9.75h3.41v1.47h.05c.47-.89 1.63-1.83 3.36-1.83 3.6 0 4.27 2.37 4.27 5.45v5.61zM5.34 8.28c-1.14 0-2.06-.93-2.06-2.06s.92-2.05 2.06-2.05c1.13 0 2.05.92 2.05 2.05s-.92 2.06-2.05 2.06zM7.11 20.45H3.57V9.75h3.54v10.7zM22.88 0H1.12C.5 0 0 .5 0 1.12v21.76C0 23.5.5 24 1.12 24h21.76c.62 0 1.12-.5 1.12-1.12V1.12C24 .5 23.5 0 22.88 0z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.instagram.com" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.84.07 1.24.06 2.07.26 2.55.44.64.25 1.11.55 1.6 1.04.49.49.8.96 1.04 1.6.18.48.38 1.31.44 2.55.07 1.26.07 1.64.07 4.84s0 3.58-.07 4.84c-.06 1.24-.26 2.07-.44 2.55-.25.64-.55 1.11-1.04 1.6-.49.49-.96.8-1.6 1.04-.48.18-1.31.38-2.55.44-1.26.07-1.64.07-4.84.07s-3.58 0-4.84-.07c-1.24-.06-2.07-.26-2.55-.44-.64-.25-1.11-.55-1.6-1.04-.49-.49-.8-.96-1.04-1.6-.18-.48-.38-1.31-.44-2.55-.07-1.26-.07-1.64-.07-4.84s0-3.58.07-4.84c.06-1.24.26-2.07.44-2.55.25-.64.55-1.11 1.04-1.6.49-.49.96-.8 1.6-1.04.48-.18 1.31-.38 2.55-.44C8.42 2.16 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33 0 7.05.07 5.77.13 4.84.34 4.09.63A5.4 5.4 0 0 0 2 2.01c-.7.7-1.38 1.69-1.68 3.07-.29.75-.5 1.68-.56 2.96C-.31 9.33-.31 9.74-.31 12s0 2.67.07 3.95c.06 1.28.27 2.21.56 2.96.3 1.39.98 2.37 1.68 3.07.7.7 1.69 1.38 3.07 1.68.75.29 1.68.5 2.96.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.28-.06 2.21-.27 2.96-.56 1.39-.3 2.37-.98 3.07-1.68.7-.7 1.38-1.69 1.68-3.07.29-.75.5-1.68.56-2.96.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.28-.27-2.21-.56-2.96-.3-1.39-.98-2.37-1.68-3.07-.7-.7-1.69-1.38-3.07-1.68-.75-.29-1.68-.5-2.96-.56C15.67 0 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">Copyright © <span id="year">2025</span> foodpanda</p>
+      <a class="policy" href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.carousel').forEach(initCarousel);
+});
+
+function initCarousel(root) {
+  const track = root.querySelector('.carousel__track');
+  const slides = Array.from(root.querySelectorAll('.carousel__slide'));
+  const prev = root.querySelector('.carousel__arrow--prev');
+  const next = root.querySelector('.carousel__arrow--next');
+  const dots = Array.from(root.querySelectorAll('.carousel__dot'));
+  const wrapper = root.querySelector('.carousel__track-wrapper');
+
+  if (!track || slides.length === 0) return;
+
+  let index = 0;
+  let timer = null;
+  const autoplay = root.getAttribute('data-autoplay') !== 'false';
+  const delay = Math.max(1000, parseInt(root.getAttribute('data-delay') || '4000', 10));
+
+  function updateUI() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, i) => d.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+    slides.forEach((s, i) => s.tabIndex = i === index ? 0 : -1);
+  }
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    updateUI();
+  }
+
+  function step(dir = 1) { goTo(index + dir); }
+
+  function startAutoplay() {
+    if (!autoplay) return;
+    stopAutoplay();
+    timer = setInterval(() => step(1), delay);
+  }
+
+  function stopAutoplay() { if (timer) { clearInterval(timer); timer = null; } }
+
+  prev?.addEventListener('click', () => { step(-1); startAutoplay(); });
+  next?.addEventListener('click', () => { step(1); startAutoplay(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.slide, 10)); startAutoplay(); }));
+
+  [wrapper, prev, next, ...dots].filter(Boolean).forEach(el => {
+    el.addEventListener('mouseenter', stopAutoplay);
+    el.addEventListener('mouseleave', startAutoplay);
+    el.addEventListener('focusin', stopAutoplay);
+    el.addEventListener('focusout', startAutoplay);
+  });
+
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { step(-1); startAutoplay(); }
+    if (e.key === 'ArrowRight') { step(1); startAutoplay(); }
+  });
+
+  updateUI();
+  startAutoplay();
+}
+</script>
+
+</body>
+</html>

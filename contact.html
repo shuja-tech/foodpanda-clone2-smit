@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+    
+
+    
+:root{
+  --brand:#ff2b85;
+  --text:#111;
+  --muted:#555;
+  --bg:#fff;
+  --card:#f5b7cd;
+  --card-radius:18px;
+  --overlay-start:rgba(0,0,0,0);
+  --overlay-end:rgba(0,0,0,.75)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.header-inner{display:flex;align-items:center;gap:24px;max-width:1200px;margin:0 auto;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:28px;width:auto}
+.brand .title{font-weight:800;font-size:20px;color:var(--brand)}
+.nav{display:flex;gap:22px;flex:1;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{color:var(--brand)}
+.actions{display:flex;align-items:center;gap:12px}
+.search-btn{display:flex;align-items:center;justify-content:center;height:38px;width:38px;border-radius:50%;border:1px solid #e6e6e6;background:#fff}
+.search-btn svg{height:18px;width:18px;color:#333}
+.cta{background:var(--brand);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:700}
+.burger{display:none;background:transparent;border:none;padding:8px}
+.burger span{display:block;height:2px;width:20px;background:#111;margin:4px 0;border-radius:2px}
+@media (max-width:960px){
+  .nav{display:none}
+  .burger{display:block}
+}
+
+
+
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 48vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.about-hero__media {
+  position: relative;
+  width: 100%;
+  height: 56vh;
+  min-height: 420px;
+  max-height: 720px;
+}
+
+.about-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  left: 6vw;
+  bottom: 8vh;
+  color: #fff;
+  pointer-events: none;
+}
+
+.about-hero__title {
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.02;
+  font-size: clamp(36px, 7vw, 92px);
+  letter-spacing: 0;
+}
+
+@media (max-width: 900px) {
+  .about-hero__media {
+    height: 48vh;
+    min-height: 360px;
+  }
+  .about-hero__overlay {
+    left: 5vw;
+    bottom: 6vh;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-hero__overlay {
+    left: 4vw;
+    bottom: 4vh;
+  }
+  .about-hero__title {
+    font-size: clamp(32px, 9vw, 64px);
+  }
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+}
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.footer-head {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: #fff;
+}
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-list li {
+  margin: 6px 0;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  color: #ff2b85;
+}
+.social .social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.social-row a svg {
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+}
+.social-row a:hover svg {
+  fill: #ff2b85;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+.copyright {
+  margin: 0;
+  color: #cfcfcf;
+}
+.policy {
+  color: #fff;
+  text-decoration: none;
+}
+.policy:hover {
+  color: #ff2b85;
+}
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+:root{
+  --pink:#e4007c;
+  --text:#111;
+  --muted:#666;
+  --line:#dfe3e8;
+  --bg:#fff;
+  --soft:#f7f7f9;
+  --radius:16px;
+  --radius-pill:999px;
+}
+
+/* Section */
+.contact-section{
+  background: var(--bg);
+  padding: 3rem 1rem;
+}
+.contact__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+.contact__title{
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.8rem, 3.8vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* Two-column layout */
+.contact__grid{
+  display: grid;
+  grid-template-columns: 1fr 520px; /* form wider, image column fixed-ish */
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+/* Form */
+.contact-form{
+  background: var(--bg);
+}
+.form-row{ margin-bottom: 1.25rem; }
+.form-label{
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.form-row--split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field input,
+.form-field textarea{
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: .75rem .9rem;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder{ color: #9aa0a6; }
+.form-field input:focus,
+.form-field textarea:focus{
+  border-color: #cfd6dc;
+  box-shadow: 0 0 0 4px rgba(228,0,124,.12);
+}
+
+/* Actions */
+.form-actions{ margin-top: 1rem; }
+.btn{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  padding: .9rem 1.6rem;
+}
+.btn--pink{
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(228,0,124,.30);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.btn--pink:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228,0,124,.40);
+}
+.btn--pink:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Right image (single) */
+.contact__image{
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+.contact__image img{
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* keep it straight and clean */
+  display: block;
+  border-radius: var(--radius);
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .contact__grid{ grid-template-columns: 1fr; }
+  .contact__image{ margin-top: 1.25rem; }
+}
+@media (max-width: 560px){
+  .form-row--split{ grid-template-columns: 1fr; }
+}
+
+
+</style>
+<body>
+    <header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="imgi_1_foodpanda_logo_2023.png" alt="Logo">
+      
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="partners.html">Partners</a>
+      <a href="ads.html">panda ads</a>
+      <a href="contact.html">Contact</a>
+      <a href="careers.html">Careers</a>
+    </nav>
+    <button class="cta">Choose location</button>
+  </div>
+</header>
+
+
+<section class="about-hero">
+  <div class="about-hero__media">
+    <img class="about-hero__img" src="imgi_12_fp-contact.webp" alt="foodpanda team and riders">
+  </div>
+  <div class="about-hero__overlay">
+    <h1 class="about-hero__title">Contact us</h1>
+  </div>
+</section>
+
+
+
+<section class="contact-section" aria-labelledby="contact-title">
+  <div class="contact__container">
+    <h2 id="contact-title" class="contact__title">Contact form</h2>
+
+    <div class="contact__grid">
+      <!-- Left: Form -->
+      <form class="contact-form" action="#" method="post" novalidate>
+        <!-- Name -->
+        <div class="form-row">
+          <label class="form-label" for="first-name">Name <span aria-hidden="true">*</span></label>
+          <div class="form-row--split">
+            <div class="form-field">
+              <input type="text" id="first-name" name="firstName" placeholder="First" required aria-required="true">
+            </div>
+            <div class="form-field">
+              <input type="text" id="last-name" name="lastName" placeholder="Last" required aria-required="true">
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-row">
+          <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
+          <div class="form-field">
+            <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true">
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="form-row">
+          <label class="form-label" for="message">Your message <span aria-hidden="true">*</span></label>
+          <div class="form-field">
+            <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Type your message here"></textarea>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn--pink">Submit</button>
+        </div>
+      </form>
+
+      <!-- Right: Single image -->
+      <figure class="contact__image">
+        <img src="imgi_2_pau-pau.webp" alt="">
+        
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="site-footer" aria-label="Footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="/">
+        <img src="" alt="foodpanda logo">
+      </a>
+
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-nav">
+          <h3 id="footer-nav" class="footer-head">Navigate</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/newsroom">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-collab">
+          <h3 id="footer-collab" class="footer-head">Collaborate</h3>
+          <ul class="footer-list">
+            <li><a href="/careers">Explore careers</a></li>
+            <li><a href="/riders">Become a rider</a></li>
+            <li><a href="/for-business">Feed your team</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col social" aria-labelledby="footer-social">
+          <h3 id="footer-social" class="footer-head">Follow us on</h3>
+          <div class="social-row">
+            <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.55 17.52 2 12.06 2 6.55 2 2 6.55 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.55v1.86h2.78l-.44 2.91h-2.34v7.03C18.34 21.19 22 17.05 22 12.06z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.47c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.57H9.41V9.75h3.41v1.47h.05c.47-.89 1.63-1.83 3.36-1.83 3.6 0 4.27 2.37 4.27 5.45v5.61zM5.34 8.28c-1.14 0-2.06-.93-2.06-2.06s.92-2.05 2.06-2.05c1.13 0 2.05.92 2.05 2.05s-.92 2.06-2.05 2.06zM7.11 20.45H3.57V9.75h3.54v10.7zM22.88 0H1.12C.5 0 0 .5 0 1.12v21.76C0 23.5.5 24 1.12 24h21.76c.62 0 1.12-.5 1.12-1.12V1.12C24 .5 23.5 0 22.88 0z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.instagram.com" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.84.07 1.24.06 2.07.26 2.55.44.64.25 1.11.55 1.6 1.04.49.49.8.96 1.04 1.6.18.48.38 1.31.44 2.55.07 1.26.07 1.64.07 4.84s0 3.58-.07 4.84c-.06 1.24-.26 2.07-.44 2.55-.25.64-.55 1.11-1.04 1.6-.49.49-.96.8-1.6 1.04-.48.18-1.31.38-2.55.44-1.26.07-1.64.07-4.84.07s-3.58 0-4.84-.07c-1.24-.06-2.07-.26-2.55-.44-.64-.25-1.11-.55-1.6-1.04-.49-.49-.8-.96-1.04-1.6-.18-.48-.38-1.31-.44-2.55-.07-1.26-.07-1.64-.07-4.84s0-3.58.07-4.84c.06-1.24.26-2.07.44-2.55.25-.64.55-1.11 1.04-1.6.49-.49.96-.8 1.6-1.04.48-.18 1.31-.38 2.55-.44C8.42 2.16 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33 0 7.05.07 5.77.13 4.84.34 4.09.63A5.4 5.4 0 0 0 2 2.01c-.7.7-1.38 1.69-1.68 3.07-.29.75-.5 1.68-.56 2.96C-.31 9.33-.31 9.74-.31 12s0 2.67.07 3.95c.06 1.28.27 2.21.56 2.96.3 1.39.98 2.37 1.68 3.07.7.7 1.69 1.38 3.07 1.68.75.29 1.68.5 2.96.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.28-.06 2.21-.27 2.96-.56 1.39-.3 2.37-.98 3.07-1.68.7-.7 1.38-1.69 1.68-3.07.29-.75.5-1.68.56-2.96.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.28-.27-2.21-.56-2.96-.3-1.39-.98-2.37-1.68-3.07-.7-.7-1.69-1.38-3.07-1.68-.75-.29-1.68-.5-2.96-.56C15.67 0 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">Copyright © <span id="year">2025</span> foodpanda</p>
+      <a class="policy" href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

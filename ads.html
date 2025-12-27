@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Panda Ads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#ffffff;
+  --text:#101114;
+  --muted:#5b5e6a;
+  --brand:#ff2b85;
+  --dark:#0b0c0f;
+  --border:#e9eaee;
+  --radius:28px;
+  --container:1200px;
+  --shadow:0 8px 24px rgba(16,17,20,.05);
+  --space:clamp(16px,2vw,24px);
+  --h1:clamp(32px,6vw,64px);
+  --h2:clamp(26px,4vw,44px);
+  --p:clamp(15px,1.8vw,18px);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{max-width:var(--container);margin-inline:auto;padding-inline:var(--space)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:3px solid #7cc3ff;outline-offset:2px}
+.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(22px,3vw,28px)}
+.brand .panda{color:var(--brand)}
+.brand .ads{color:#7a7d89;font-weight:700}
+.nav-right{display:flex;align-items:center;gap:clamp(10px,2vw,22px)}
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px)}
+.nav-link{font-weight:600;color:#1b1d23}
+.cta{appearance:none;border:none;background:var(--brand);color:#fff;font-weight:700;border-radius:var(--radius);padding:12px 22px;cursor:pointer}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:#fff;display:grid;place-items:center;cursor:pointer}
+.icon-btn svg{width:18px;height:18px;color:#333}
+.hamburger{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--border);background:#fff;align-items:center;justify-content:center}
+.hamburger svg{width:22px;height:22px}
+.mobile-panel{display:none;position:fixed;inset:72px 0 auto 0;background:#fff;border-top:1px solid var(--border);box-shadow:var(--shadow);z-index:49}
+.mobile-menu{display:flex;flex-direction:column;gap:8px;padding:16px}
+.mobile-menu a{padding:14px 10px;border-radius:12px;font-weight:600}
+.mobile-actions{display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--border)}
+.hero{position:relative}
+.hero-wrap{display:grid;grid-template-columns:1.05fr 0.95fr;min-height:clamp(520px,68vh,720px)}
+.hero-left{background:var(--dark);color:#fff;display:flex;align-items:center}
+.hero-left .inner{width:100%}
+.h1{font-size:var(--h1);line-height:1.05;font-weight:800;letter-spacing:-0.5px;margin:0 0 16px}
+.h1 span{display:block}
+.sub{max-width:min(62ch,95%);color:#d1d5db;font-size:var(--p);line-height:1.6;margin:0 0 24px}
+.hero-cta{display:inline-block;background:#fff;color:var(--brand);font-weight:700;border-radius:36px;padding:14px 24px}
+.hero-right{position:relative;isolation:isolate}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,12,15,.85) 0%,rgba(11,12,15,.55) 30%,rgba(11,12,15,0) 60%)}
+.section{padding-block:clamp(40px,6vw,64px)}
+.title{font-size:var(--h2);font-weight:800;letter-spacing:-.3px;margin:0}
+@media (max-width:1024px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+@media (max-width:920px){
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-right{height:clamp(320px,38vh,420px)}
+  .hero-overlay{background:linear-gradient(0deg,rgba(11,12,15,.85) 0%,rgba(11,12,15,0) 55%)}
+  .hero-left{order:2}
+}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto;animation:none;transition:none}
+}
+
+
+.metrics{
+  background:#fff;
+  padding-block:clamp(48px,8vw,88px);
+}
+.metrics-wrap{
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:clamp(16px,4vw,32px);
+  text-align:center;
+}
+.metrics-title{
+  margin:0 0 clamp(28px,6vw,48px);
+  font-size:clamp(26px,4.8vw,48px);
+  line-height:1.15;
+  letter-spacing:-.02em;
+  font-weight:800;
+  color:var(--text);
+}
+.metrics-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(24px,4vw,40px);
+  align-items:start;
+}
+.metric{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.metric-value{
+  font-size:clamp(40px,8vw,84px);
+  font-weight:800;
+  letter-spacing:-.02em;
+  color:var(--text);
+}
+.metric-label{
+  font-size:clamp(14px,2.4vw,20px);
+  font-weight:700;
+  color:#2a2d35;
+}
+@media (max-width:768px){
+  .metrics-grid{grid-template-columns:1fr;gap:20px}
+}
+
+
+
+
+
+.visibility-section{
+  background: var(--bg);
+  padding: 3.2rem 1rem;
+}
+
+.vis__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.vis__title{
+  margin: 0 0 2rem;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.vis__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 3vw, 32px);
+  align-items: start;
+}
+
+/* Card */
+.vis-card{
+  background: transparent;
+  padding: 0 1rem;
+}
+
+/* Top image holder */
+.vis-card__icon{
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 10px;
+}
+.vis-card__icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Heading + text */
+.vis-card__heading{
+  margin: 8px 0 8px;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text);
+}
+.vis-card__text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .vis__grid{ grid-template-columns: 1fr; }
+  .vis-card{ padding: 0; }
+}
+
+
+
+
+
+
+/* Section wrapper */
+.retail-media{
+  background: var(--bg);
+  padding: 3.2rem 1rem;
+}
+
+/* Container */
+.rm__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+
+/* Heading */
+.rm__title{
+  margin: 0 0 2rem;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+  text-align: center;
+}
+
+/* Two-column layout */
+.rm__content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 3vw, 36px);
+  align-items: center;
+}
+
+/* Left: single, straight image */
+.rm__image{
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  /* keeps image straight (no tilt) */
+}
+.rm__image img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;      /* phones/artwork remain straight */
+  transform: none;          /* ensure no rotation/tilt */
+}
+
+/* Right: copy + CTA */
+.rm__textblock{
+  padding: 0 0 0 0.5rem;
+}
+.rm__subtitle{
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text);
+}
+.rm__desc{
+  margin: 0 0 1.2rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* CTA (pill button) */
+.rm__cta{
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .9rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(228,0,124,.30);
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+.rm__cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228,0,124,.40);
+}
+.rm__cta:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .rm__content{ grid-template-columns: 1fr; }
+  .rm__textblock{ padding: 0; }
+  .rm__image{ justify-self: center; }
+  .rm__title{ text-align: center; }
+}
+
+
+
+
+:root {
+  --pink: #e4007c;
+  --text: #111;
+  --muted: #555;
+  --bg: #fff;
+  --radius: 16px;
+}
+
+/* Section wrapper */
+.offapp-section {
+  background: var(--bg);
+  padding: 3rem 1rem;
+}
+
+/* Container: two-column layout */
+.offapp__container {
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 40px);
+  align-items: center;
+}
+
+/* Left content */
+.offapp__heading {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.offapp__desc {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* CTA button */
+.offapp__cta {
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(228, 0, 124, 0.3);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.offapp__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228, 0, 124, 0.4);
+}
+
+.offapp__cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Right image */
+.offapp__image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .offapp__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .offapp__image {
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+:root{
+  --pink:#e4007c;
+  --text:#111;
+  --muted:#555;
+  --bg:#fff;
+  --radius:16px;
+}
+
+/* Section wrapper */
+.targeting-section{
+  background: var(--bg);
+  padding: 3rem 1rem;
+}
+
+/* Two-column container */
+.targeting__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr; /* copy a bit wider than image */
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+/* Left column */
+.targeting__title{
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 3.8vw, 2.2rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--text);
+}
+.targeting__desc{
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* CTA */
+.targeting__cta{
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 0.95rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(228,0,124,.30);
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+}
+.targeting__cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228,0,124,.40);
+}
+.targeting__cta:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Right column: single image in a soft card */
+.targeting__media{
+  margin: 0;
+  padding: 3px;
+  border-radius: var(--radius);
+  background: #ffffff;
+  
+}
+.targeting__media img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* keeps the image crisp without stretching */
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .targeting__container{
+    grid-template-columns: 1fr;
+    text-align: left; /* keep left-aligned like the reference */
+  }
+  .targeting__media{
+    max-width: 640px;
+    justify-self: center;
+  }
+}
+
+
+
+
+
+/* Section */
+.impact{
+  background: var(--soft);
+  padding: 3rem 1rem;
+}
+.impact__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+.impact__title{
+  text-align: center;
+  margin: 0 0 1.8rem;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 900;
+  color: var(--text);
+}
+
+/* Grid */
+.impact__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Card */
+.impact-card{
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.impact-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.10);
+}
+
+/* Top image */
+.impact-card__media{
+  margin: 0;
+  height: clamp(180px, 22vw, 260px);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+}
+.impact-card__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills nicely with rounded top corners */
+  display: block;
+}
+
+/* Body */
+.impact-card__body{
+  padding: 18px;
+}
+.impact-card__heading{
+  margin: 0 0 14px;
+  font-weight: 900;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* CTA */
+.impact-card__cta{
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .8rem 1.2rem;
+  box-shadow: 0 10px 22px rgba(228,0,124,.28);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.impact-card__cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(228,0,124,.38);
+}
+.impact-card__cta:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .impact__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px){
+  .impact__grid{ grid-template-columns: 1fr; }
+}
+
+
+
+
+
+.testimonials{
+  background: var(--bg);
+  padding: 3.2rem 1rem;
+}
+
+.tms__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+
+.tms__title{
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 900;
+  color: var(--text);
+}
+
+.tms__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 3vw, 28px);
+  align-items: start;
+}
+
+/* Card layout */
+.tms-card{
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem 0.75rem;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 0.9rem;
+  text-align: center;
+}
+
+/* Quote */
+.tms-quote{
+  margin: 0;
+  font-style: italic;
+  color: #222;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* Author block */
+.tms-author{
+  margin-top: 0.3rem;
+}
+.tms-name{
+  font-weight: 800;
+  color: var(--text);
+}
+.tms-role{
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Logo (bottom-aligned visual) */
+.tms-logo{
+  margin: 1.2rem auto 0.2rem;
+  width: 150px; /* adjust to your logo proportions */
+  height: 48px;
+}
+.tms-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+  display: block;
+}
+
+/* Optional: subtle separation from page background like the screenshot footer area */
+.testimonials.is-soft{
+  background: var(--soft);
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .tms__grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .tms__grid{ grid-template-columns: 1fr; }
+  .tms-card{ padding: 1rem; }
+  .tms-quote{ font-size: 1rem; }
+}
+
+
+
+/* Section spacing */
+.panda-cta-logos{
+  padding: 0 1rem 2.5rem;
+}
+
+/* CTA Banner */
+.cta-banner{
+  width: min(1200px, 92%);
+  margin: 0 auto 2.5rem;
+  background: var(--pink-soft);
+  border-radius: 16px;
+  padding: clamp(18px, 3vw, 28px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+.cta-banner__title{
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  color: var(--text);
+}
+
+/* CTA button */
+.cta-banner__btn{
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .9rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(228,0,124,.3);
+  transition: transform .14s ease, box-shadow .14s ease;
+  white-space: nowrap;
+}
+.cta-banner__btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(228,0,124,.4);
+}
+.cta-banner__btn:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Brands block */
+.brands{
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+.brands__title{
+  margin: 0 0 1.4rem;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3.8vw, 2.25rem);
+  color: var(--text);
+}
+
+/* Logo grid (fluid, wraps nicely) */
+.brands__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: clamp(14px, 2vw, 24px) clamp(16px, 3vw, 32px);
+  align-items: center;
+}
+.brands__item{
+  height: 36px;                  /* unified height; adjust if needed */
+  display: grid;
+  place-items: center;
+  opacity: .9;
+  filter: grayscale(100%);       /* subtle, like the reference */
+  transition: filter .2s ease, opacity .2s ease, transform .2s ease;
+}
+.brands__item img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.brands__item:hover{
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .cta-banner{ grid-template-columns: 1fr; text-align:center; }
+  .brands__list{ grid-template-columns: repeat(5, 1fr); }
+}
+@media (max-width: 680px){
+  .brands__list{ grid-template-columns: repeat(3, 1fr); }
+  .brands__item{ height: 28px; }
+}
+
+
+
+.site-footer {
+  background: #000;
+  color: #fff;
+}
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.footer-head {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: #fff;
+}
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-list li {
+  margin: 6px 0;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  color: #ff2b85;
+}
+.social .social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.social-row a svg {
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+}
+.social-row a:hover svg {
+  fill: #ff2b85;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+.copyright {
+  margin: 0;
+  color: #cfcfcf;
+}
+.policy {
+  color: #fff;
+  text-decoration: none;
+}
+.policy:hover {
+  color: #ff2b85;
+}
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand" aria-label="Panda Ads">
+      <span class="panda">panda</span><span class="ads">ads</span>
+    </div>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="ads.html">Home</a>
+        <a class="nav-link" href="#">Solutions</a>
+        <a class="nav-link" href="#">Tools</a>
+        <button class="cta">Contact us</button>
+        <button class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.35-4.35M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobilePanel" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobilePanel" class="mobile-panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <div class="mobile-menu container">
+      <a href="ads.html">Home</a>
+      <a href="#">Solutions</a>
+      <a href="#">Tools</a>
+    </div>
+    <div class="mobile-actions">
+      <div class="container" style="display:flex;align-items:center;gap:12px;padding:0">
+        <button class="cta" style="flex:1">Contact us</button>
+        
+        <button class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.35-4.35M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="hero-left">
+      <div class="container inner">
+        <h1 class="h1">
+          <span>Reach millions</span>
+          <span>with panda ads</span>
+        </h1>
+        <p class="sub">Advertise with foodpanda and connect with millions of ready‑to‑shop customers within and beyond the foodpanda app.</p>
+        <a href="#" class="hero-cta">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-img" id="heroImage"></div>
+      <div class="hero-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<br>
+<section class="metrics">
+  <div class="metrics-wrap">
+    <h2 class="metrics-title">
+      Boost your brand with Asia’s largest<br />
+      food and grocery delivery network*
+    </h2>
+
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-value">125M</div>
+        <div class="metric-label">app downloads</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">11</div>
+        <div class="metric-label">markets</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">400+</div>
+        <div class="metric-label">cities</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+
+<section class="visibility-section" aria-labelledby="visibility-title">
+  <div class="vis__container">
+    <h2 id="visibility-title" class="vis__title">
+      Power up your visibility &amp; engagement
+    </h2>
+    <br>
+
+    <div class="vis__grid">
+      <!-- Card 1 -->
+      <article class="vis-card">
+        <div class="vis-card__icon">
+          <!-- Replace with your image -->
+          <img src="imgi_2_jpeg-optimizer_72_New-arrivals.png" alt="">
+        </div>
+        <h3 class="vis-card__heading">Maximise your reach</h3>
+        <p class="vis-card__text">
+          Amplify your campaign by connecting with your target customers right where they shop.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="vis-card">
+        <div class="vis-card__icon">
+          <img src="imgi_3_jpeg-optimizer_73_Weekly-Highlights_04_.png" alt="">
+        </div>
+        <h3 class="vis-card__heading">Engage high‑value audiences</h3>
+        <p class="vis-card__text">
+          Leverage our first‑party data and advanced targeting to connect with the right audience.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="vis-card">
+        <div class="vis-card__icon">
+          <img src="imgi_4_jpeg-optimizer_56_stationary-1.png" alt="">
+        </div>
+        <h3 class="vis-card__heading">Get personalised support</h3>
+        <p class="vis-card__text">
+          Achieve your marketing goals and drive growth with personalised support, insights, and more.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+
+
+<section class="retail-media" aria-labelledby="retail-media-title">
+  <div class="rm__container">
+    <h2 id="retail-media-title" class="rm__title">
+      Customised retail media advertising<br>solutions for your brand’s needs
+    </h2>
+
+    <div class="rm__content">
+      <!-- Left: single, straight image -->
+      <figure class="rm__image">
+        <!-- Replace with your asset -->
+        <img src="imgi_47_jpeg-optimizer_in-app.png" alt="In-app advertising illustration">
+      </figure>
+
+      <!-- Right: text and CTA -->
+      <div class="rm__textblock">
+        <h3 class="rm__subtitle">In‑app advertising</h3>
+        <p class="rm__desc">
+          Increase brand visibility with native display ads across different categories on the foodpanda app.
+        </p>
+        <a href="#" class="rm__cta">Explore solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="offapp-section" aria-labelledby="offapp-title">
+  <div class="offapp__container">
+    <div class="offapp__content">
+      <h2 id="offapp-title" class="offapp__heading">Off-app advertising</h2>
+      <p class="offapp__desc">
+        Amplify your campaigns with foodpanda, from email marketing and social media to rider bag ads and product sampling.
+      </p>
+        <a href="#" class="offapp__cta">Explore solutions</a>
+    </div>
+
+    <figure class="offapp__image">
+      <!-- Replace with your image -->
+      <img src="imgi_49_jpeg-optimizer_panda-ads-website-homepage-off-app-solutions-highres.png" alt="">
+    </figure>
+  </div>
+</section>
+
+
+
+<section class="targeting-section" aria-labelledby="targeting-title">
+  <div class="targeting__container">
+
+    <!-- Left: text -->
+    <div class="targeting__copy">
+      <h2 id="targeting-title" class="targeting__title">
+        Go beyond basic targeting with panda ads
+      </h2>
+      <p class="targeting__desc">
+        Maximise your ROI and connect with a broader, more relevant audience through precise targeting
+        powered by our first‑party data.
+      </p>
+
+        <a href="#" class="targeting__cta">Explore solutions</a>
+    </div>
+
+    <!-- Right: single image -->
+    <figure class="targeting__media">
+      <!-- Replace with your asset -->
+        <img src="imgi_61_jpeg-optimizer_audience-targeting.png" alt="Targeting illustration">
+    </figure>
+  </div>
+</section>
+
+
+
+
+<section class="impact" aria-labelledby="impact-title">
+  <div class="impact__container">
+    <h2 id="impact-title" class="impact__title">Proven impact with panda ads</h2>
+
+    <div class="impact__grid">
+      <!-- Card 1 -->
+      <article class="impact-card">
+        <figure class="impact-card__media">
+          <!-- Replace with your image -->
+          <img src="imgi_9_jpeg-optimizer_coca-cola-1-900x507.jpg" alt="">
+        </figure>
+        <div class="impact-card__body">
+          <h3 class="impact-card__heading">
+            Coca‑Cola leveraged retail media channels to boost sales and drive growth
+          </h3>
+          <a href="#" class="targeting__cta">Read more</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="impact-card">
+        <figure class="impact-card__media">
+          <img src="imgi_10_jpeg-optimizer_PandaAds_Eclipse_Thumbnail_v2-900x506.jpg" alt="">
+        </figure>
+        <div class="impact-card__body">
+          <h3 class="impact-card__heading">
+            Mars Wrigley finds the perfect audience for its new product with panda ads
+          </h3>
+          <a href="#" class="targeting__cta">Read more</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="impact-card">
+        <figure class="impact-card__media">
+          <img src="imgi_11_jpeg-optimizer_amazon.jpg" alt="">
+        </figure>
+        <div class="impact-card__body">
+          <h3 class="impact-card__heading">
+            Amazon Prime Video and foodpanda’s impressive entertainment strategy
+          </h3>
+            <a href="#" class="targeting__cta">Read more</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="testimonials" aria-labelledby="testimonials-title">
+  <div class="tms__container">
+    <h2 id="testimonials-title" class="tms__title">What our customers are saying</h2>
+
+    <div class="tms__grid">
+      <!-- Testimonial 1 -->
+      <article class="tms-card">
+        <blockquote class="tms-quote">
+          “We were looking for a large APAC-wide partner with premium O&O mobile ad inventory that could
+          connect us to our target audiences. panda ads were able to be that partner and have delivered
+          beyond our campaign’s target KPIs. We look forward to expanding our business with them.”
+        </blockquote>
+        <div class="tms-author">
+          <div class="tms-name">Luke Addison</div>
+          <div class="tms-role">Managing Director</div>
+        </div>
+        <div class="tms-logo">
+          <!-- Replace with your logo -->
+          <img src="imgi_12_egentics-Photoroom.png" alt="">
+        </div>
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="tms-card">
+        <blockquote class="tms-quote">
+          “As one of the goals from 2023 was to accelerate quick commerce growth through new activations and media,
+          tapping into panda ads helped us grow our quick commerce business and deliver on our KPIs.”
+        </blockquote>
+        <div class="tms-author">
+          <div class="tms-name">Jayson Lopez</div>
+          <div class="tms-role">Senior Media and Digital Marketing Manager</div>
+        </div>
+        <div class="tms-logo">
+          <img src="imgi_13_Universal-Robina-Logo-1024x576.png" alt="">
+        </div>
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="tms-card">
+        <blockquote class="tms-quote">
+          “The collaboration with foodpanda through panda ads greatly enhanced our customer acquisition initiatives,
+          by capturing our audience’s interest and fostering heightened user engagement.”
+        </blockquote>
+        <div class="tms-author">
+          <div class="tms-name">Jessica Faye Tan</div>
+          <div class="tms-role">Head of Commercial</div>
+        </div>
+        <div class="tms-logo">
+          <img src="imgi_82_moneymax_owler_20201020_015917_original-800x204.png" alt="">
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="panda-cta-logos" aria-labelledby="panda-cta-title">
+  <!-- CTA banner -->
+  <div class="cta-banner">
+    <h2 id="panda-cta-title" class="cta-banner__title">
+      Start advertising with panda ads today!
+    </h2>
+    <a href="#" class="cta-banner__btn">Get in touch!</a>
+  </div>
+
+  <!-- Logos -->
+  <div class="brands">
+    <h3 class="brands__title">Brands excelling with us</h3>
+
+    <ul class="brands__list" aria-label="Brand logos">
+      <!-- Replace src values with your logo files -->
+      <li class="brands__item"> <img src="imgi_15_1.png" alt=""> </li>
+      <li class="brands__item"> <img src="imgi_82_moneymax_owler_20201020_015917_original-800x204.png" alt=""> </li>
+      <li class="brands__item"> <img src="imgi_88_1-90x54.png" alt=""> </li>
+      <li class="brands__item"> <img src="imgi_97_10-90x54.png" alt=""> </li>
+      <li class="brands__item"> <img src="imgi_87_moneymax_owler_20201020_015917_original-90x23.png" alt=""> </li>
+      <li class="brands__item"> <img src="imgi_80_egentics-Photoroom-90x23.png" alt=""> </li>
+      <li class="brands__item"> <img src="images/logos/mastercard.svg" alt=""> </li>
+      <li class="brands__item"> <img src="images/logos/unilever.svg" alt=""> </li>
+      <li class="brands__item"><img src="imgi_95_8-90x54.png" alt=""></li>
+      <li class="brands__item"> <img src="imgi_93_6-90x54.png" alt=""></li>
+      <li class="brands__item"><img src="imgi_91_4-90x54.png" alt=""></li>
+      <li class="brands__item"><img src="imgi_90_3-90x54.png" alt=""></li>
+      <li class="brands__item"><img src="imgi_99_12-90x54.png" alt=""></li>
+      <li class="brands__item"> <img src="imgi_94_7-90x54.png" alt=""> </li>
+      <li class="brands__item"> <img src="imgi_92_5-90x54.png" alt=""> </li>
+      
+    </ul>
+  </div>
+</section>
+
+
+<footer class="site-footer" aria-label="Footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="/">
+        <img src="imgi_1_foodpanda_logo_2023.png" alt="foodpanda logo">
+      </a>
+
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-nav">
+          <h3 id="footer-nav" class="footer-head">Navigate</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="newsroom.html">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-collab">
+          <h3 id="footer-collab" class="footer-head">Collaborate</h3>
+          <ul class="footer-list">
+            <li><a href="/careers">Explore careers</a></li>
+            <li><a href="/riders">Become a rider</a></li>
+            <li><a href="/for-business">Feed your team</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col social" aria-labelledby="footer-social">
+          <h3 id="footer-social" class="footer-head">Follow us on</h3>
+          <div class="social-row">
+            <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.55 17.52 2 12.06 2 6.55 2 2 6.55 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.55v1.86h2.78l-.44 2.91h-2.34v7.03C18.34 21.19 22 17.05 22 12.06z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.47c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.57H9.41V9.75h3.41v1.47h.05c.47-.89 1.63-1.83 3.36-1.83 3.6 0 4.27 2.37 4.27 5.45v5.61zM5.34 8.28c-1.14 0-2.06-.93-2.06-2.06s.92-2.05 2.06-2.05c1.13 0 2.05.92 2.05 2.05s-.92 2.06-2.05 2.06zM7.11 20.45H3.57V9.75h3.54v10.7zM22.88 0H1.12C.5 0 0 .5 0 1.12v21.76C0 23.5.5 24 1.12 24h21.76c.62 0 1.12-.5 1.12-1.12V1.12C24 .5 23.5 0 22.88 0z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.instagram.com" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.84.07 1.24.06 2.07.26 2.55.44.64.25 1.11.55 1.6 1.04.49.49.8.96 1.04 1.6.18.48.38 1.31.44 2.55.07 1.26.07 1.64.07 4.84s0 3.58-.07 4.84c-.06 1.24-.26 2.07-.44 2.55-.25.64-.55 1.11-1.04 1.6-.49.49-.96.8-1.6 1.04-.48.18-1.31.38-2.55.44-1.26.07-1.64.07-4.84.07s-3.58 0-4.84-.07c-1.24-.06-2.07-.26-2.55-.44-.64-.25-1.11-.55-1.6-1.04-.49-.49-.8-.96-1.04-1.6-.18-.48-.38-1.31-.44-2.55-.07-1.26-.07-1.64-.07-4.84s0-3.58.07-4.84c.06-1.24.26-2.07.44-2.55.25-.64.55-1.11 1.04-1.6.49-.49.96-.8 1.6-1.04.48-.18 1.31-.38 2.55-.44C8.42 2.16 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33 0 7.05.07 5.77.13 4.84.34 4.09.63A5.4 5.4 0 0 0 2 2.01c-.7.7-1.38 1.69-1.68 3.07-.29.75-.5 1.68-.56 2.96C-.31 9.33-.31 9.74-.31 12s0 2.67.07 3.95c.06 1.28.27 2.21.56 2.96.3 1.39.98 2.37 1.68 3.07.7.7 1.69 1.38 3.07 1.68.75.29 1.68.5 2.96.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.28-.06 2.21-.27 2.96-.56 1.39-.3 2.37-.98 3.07-1.68.7-.7 1.38-1.69 1.68-3.07.29-.75.5-1.68.56-2.96.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.28-.27-2.21-.56-2.96-.3-1.39-.98-2.37-1.68-3.07-.7-.7-1.69-1.38-3.07-1.68-.75-.29-1.68-.5-2.96-.56C15.67 0 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">Copyright © <span id="year">2025</span> foodpanda</p>
+      <a class="policy" href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+const imgUrl="imgi_47_foodpanda-panda-ads.webp";
+document.getElementById("heroImage").style.backgroundImage=`url('${imgUrl}')`;
+const hamburger=document.querySelector(".hamburger");
+const panel=document.getElementById("mobilePanel");
+let open=false;
+const setState=state=>{
+  open=state;
+  hamburger.setAttribute("aria-expanded",String(open));
+  panel.style.display=open?"block":"none";
+  document.body.style.overflow=open?"hidden":"";
+};
+hamburger.addEventListener("click",()=>setState(!open));
+panel.addEventListener("click",e=>{if(e.target===panel)setState(false)});
+window.addEventListener("keydown",e=>{if(e.key==="Escape")setState(false)});
+
+</script>
+</body>
+</html>

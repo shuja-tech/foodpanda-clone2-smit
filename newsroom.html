@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsroom</title>
+</head>
+<body>
+    <style>
+        
+:root{
+  --brand:#ff2b85;
+  --text:#111;
+  --muted:#555;
+  --bg:#fff;
+  --card:#f5b7cd;
+  --card-radius:18px;
+  --overlay-start:rgba(0,0,0,0);
+  --overlay-end:rgba(0,0,0,.75)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.header-inner{display:flex;align-items:center;gap:24px;max-width:1200px;margin:0 auto;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:28px;width:auto}
+.brand .title{font-weight:800;font-size:20px;color:var(--brand)}
+.nav{display:flex;gap:22px;flex:1;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{color:var(--brand)}
+.actions{display:flex;align-items:center;gap:12px}
+.search-btn{display:flex;align-items:center;justify-content:center;height:38px;width:38px;border-radius:50%;border:1px solid #e6e6e6;background:#fff}
+.search-btn svg{height:18px;width:18px;color:#333}
+.cta{background:var(--brand);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:700}
+.burger{display:none;background:transparent;border:none;padding:8px}
+.burger span{display:block;height:2px;width:20px;background:#111;margin:4px 0;border-radius:2px}
+@media (max-width:960px){
+  .nav{display:none}
+  .burger{display:block}
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+}
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.footer-head {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: #fff;
+}
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-list li {
+  margin: 6px 0;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  color: #ff2b85;
+}
+.social .social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.social-row a svg {
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+}
+.social-row a:hover svg {
+  fill: #ff2b85;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+.copyright {
+  margin: 0;
+  color: #cfcfcf;
+}
+.policy {
+  color: #fff;
+  text-decoration: none;
+}
+.policy:hover {
+  color: #ff2b85;
+}
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+:root {
+  --pink: #e4007c;
+  --text: #111;
+  --muted: #555;
+  --bg-soft: #f7f7f9;
+  --radius: 12px;
+}
+
+.press-release {
+  padding: 3rem 1rem;
+  background: #fff;
+}
+
+.press-release__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.press-release__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.press-release__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.press-release__text {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.press-release__tag {
+  color: var(--pink);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.press-release__date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.press-release__title {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .press-release__content {
+    grid-template-columns: 1fr;
+  }
+  .press-release__image img {
+    height: auto;
+  }
+}
+
+
+
+
+
+
+.news {
+  padding: 3rem 1rem;
+  background: var(--bg);
+}
+.news__container {
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+.news__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 2rem;
+  align-items: start;
+}
+.news__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+.news__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.pill {
+  appearance: none;
+  border: 2px solid #d7dbe0;
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.pill.is-active {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: #fff;
+}
+.pill--outline {
+  border-color: var(--pink);
+  color: var(--pink);
+  background: transparent;
+}
+
+.news__grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.news-card {
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.news-card__media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.news-card__media--quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 110px;
+}
+.news-card__media--quad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.news-card__body {
+  padding: 1.25rem;
+  background: var(--bg);
+}
+.news-card__tag {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.news-card__title {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+
+.is-hidden {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .news__header { grid-template-columns: 1fr }
+  .news__grid { grid-template-columns: repeat(2, 1fr) }
+}
+@media (max-width: 700px) {
+  .news__grid { grid-template-columns: 1fr }
+  .news-card__media img { height: 200px }
+}
+
+
+    </style>
+    <header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="imgi_1_foodpanda_logo_2023.png" alt="Logo">
+      
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="partners.html">Partners</a>
+      <a href="#">panda ads</a>
+      <a href="#">Contact</a>
+      <a href="#">Careers</a>
+    </nav>
+    <button class="cta">Choose location</button>
+  </div>
+</header>
+
+
+
+<section class="press-release">
+  <div class="container">
+    <h2 class="press-release__heading">Press Releases</h2>
+    <div class="press-release__content">
+      <div class="press-release__image">
+        <img src="imgi_3_EDW_0166-1.jpg" alt="foodpanda delivery person handing over a food package to a customer">
+      </div>
+      <div class="press-release__text">
+        <span class="press-release__tag">MERCHANTS</span>
+        <span class="press-release__date">17 Dec 2025</span>
+        <h3 class="press-release__title">
+          foodpanda strengthens merchant care with record onboarding milestone in Asia
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="news">
+  <div class="news__container">
+    <div class="news__header">
+      <h2 class="news__title">Discover<br>latest news</h2>
+      <div class="news__filters" role="tablist" aria-label="News categories">
+        <button class="pill is-active" role="tab" aria-selected="true" data-category="all">All</button>
+        <button class="pill" role="tab" aria-selected="false" data-category="business">Business</button>
+        <button class="pill" role="tab" aria-selected="false" data-category="campaigns">Campaigns</button>
+        <button class="pill" role="tab" aria-selected="false" data-category="editorials">Editorials</button>
+        <button class="pill" role="tab" aria-selected="false" data-category="food-delivery">Food delivery</button>
+        <button class="pill" role="tab" aria-selected="false" data-category="infographics">Infographics</button>
+        <button class="pill pill--outline news__showmore" type="button">Show more</button>
+      </div>
+    </div>
+
+    <div class="news__grid">
+      <article class="news-card" data-category="business">
+        <div class="news-card__media">
+          <img src="imgi_3_EDW_0166-1.jpg" alt="">
+        </div>
+        <div class="news-card__body">
+          <span class="news-card__tag">APAC</span>
+          <h3 class="news-card__title">foodpanda strengthens merchant care with record onboarding milestone in Asia</h3>
+        </div>
+      </article>
+
+      <article class="news-card" data-category="campaigns">
+        <div class="news-card__media">
+          <img src="imgi_4_Key-KV.jpg" alt="">
+        </div>
+        <div class="news-card__body">
+          <span class="news-card__tag">APAC</span>
+          <h3 class="news-card__title">foodpanda expands ‘panda hearts’ programme, reports 30% drop in rider accidents across Asia</h3>
+        </div>
+      </article>
+
+      <article class="news-card" data-category="business">
+        <div class="news-card__media news-card__media--quad">
+          <img src="imgi_2_Ride_Hailing_Release___Key_Visual-v2.jpg" alt="">
+        </div>
+        <div class="news-card__body">
+          <span class="news-card__tag">APAC</span>
+          <h3 class="news-card__title">foodpanda brings unmatched value to pandapro members with one-of-a-kind ride-hailing partnerships across regions</h3>
+        </div>
+      </article>
+
+      <article class="news-card is-hidden" data-category="editorials">
+        <div class="news-card__media">
+          images/news-4.jpg
+        </div>
+        <div class="news-card__body">
+          <span class="news-card__tag">Editorial</span>
+          <h3 class="news-card__title">Behind the scenes: scaling last-mile delivery with data-driven operations</h3>
+        </div>
+      </article>
+
+      <article class="news-card is-hidden" data-category="infographics">
+        <div class="news-card__media">
+          images/news-5.jpg
+        </div>
+        <div class="news-card__body">
+          <span class="news-card__tag">Infographics</span>
+          <h3 class="news-card__title">The 2025 food delivery landscape: key trends and insights</h3>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="site-footer" aria-label="Footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="/">
+        <img src="imgi_1_foodpanda_logo_2023.png" alt="foodpanda logo">
+      </a>
+
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-nav">
+          <h3 id="footer-nav" class="footer-head">Navigate</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/newsroom">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-collab">
+          <h3 id="footer-collab" class="footer-head">Collaborate</h3>
+          <ul class="footer-list">
+            <li><a href="/careers">Explore careers</a></li>
+            <li><a href="/riders">Become a rider</a></li>
+            <li><a href="/for-business">Feed your team</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col social" aria-labelledby="footer-social">
+          <h3 id="footer-social" class="footer-head">Follow us on</h3>
+          <div class="social-row">
+            <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.55 17.52 2 12.06 2 6.55 2 2 6.55 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.55v1.86h2.78l-.44 2.91h-2.34v7.03C18.34 21.19 22 17.05 22 12.06z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.47c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.57H9.41V9.75h3.41v1.47h.05c.47-.89 1.63-1.83 3.36-1.83 3.6 0 4.27 2.37 4.27 5.45v5.61zM5.34 8.28c-1.14 0-2.06-.93-2.06-2.06s.92-2.05 2.06-2.05c1.13 0 2.05.92 2.05 2.05s-.92 2.06-2.05 2.06zM7.11 20.45H3.57V9.75h3.54v10.7zM22.88 0H1.12C.5 0 0 .5 0 1.12v21.76C0 23.5.5 24 1.12 24h21.76c.62 0 1.12-.5 1.12-1.12V1.12C24 .5 23.5 0 22.88 0z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.instagram.com" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.84.07 1.24.06 2.07.26 2.55.44.64.25 1.11.55 1.6 1.04.49.49.8.96 1.04 1.6.18.48.38 1.31.44 2.55.07 1.26.07 1.64.07 4.84s0 3.58-.07 4.84c-.06 1.24-.26 2.07-.44 2.55-.25.64-.55 1.11-1.04 1.6-.49.49-.96.8-1.6 1.04-.48.18-1.31.38-2.55.44-1.26.07-1.64.07-4.84.07s-3.58 0-4.84-.07c-1.24-.06-2.07-.26-2.55-.44-.64-.25-1.11-.55-1.6-1.04-.49-.49-.8-.96-1.04-1.6-.18-.48-.38-1.31-.44-2.55-.07-1.26-.07-1.64-.07-4.84s0-3.58.07-4.84c.06-1.24.26-2.07.44-2.55.25-.64.55-1.11 1.04-1.6.49-.49.96-.8 1.6-1.04.48-.18 1.31-.38 2.55-.44C8.42 2.16 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33 0 7.05.07 5.77.13 4.84.34 4.09.63A5.4 5.4 0 0 0 2 2.01c-.7.7-1.38 1.69-1.68 3.07-.29.75-.5 1.68-.56 2.96C-.31 9.33-.31 9.74-.31 12s0 2.67.07 3.95c.06 1.28.27 2.21.56 2.96.3 1.39.98 2.37 1.68 3.07.7.7 1.69 1.38 3.07 1.68.75.29 1.68.5 2.96.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.28-.06 2.21-.27 2.96-.56 1.39-.3 2.37-.98 3.07-1.68.7-.7 1.38-1.69 1.68-3.07.29-.75.5-1.68.56-2.96.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.28-.27-2.21-.56-2.96-.3-1.39-.98-2.37-1.68-3.07-.7-.7-1.69-1.38-3.07-1.68-.75-.29-1.68-.5-2.96-.56C15.67 0 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">Copyright © <span id="year">2025</span> foodpanda</p>
+      <a class="policy" href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

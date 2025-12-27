@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners</title>
+</head>
+<style>
+    
+:root{
+  --brand:#ff2b85;
+  --text:#111;
+  --muted:#555;
+  --bg:#fff;
+  --card:#f5b7cd;
+  --card-radius:18px;
+  --overlay-start:rgba(0,0,0,0);
+  --overlay-end:rgba(0,0,0,.75)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.header-inner{display:flex;align-items:center;gap:24px;max-width:1200px;margin:0 auto;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:28px;width:auto}
+.brand .title{font-weight:800;font-size:20px;color:var(--brand)}
+.nav{display:flex;gap:22px;flex:1;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{color:var(--brand)}
+.actions{display:flex;align-items:center;gap:12px}
+.search-btn{display:flex;align-items:center;justify-content:center;height:38px;width:38px;border-radius:50%;border:1px solid #e6e6e6;background:#fff}
+.search-btn svg{height:18px;width:18px;color:#333}
+.cta{background:var(--brand);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:700}
+.burger{display:none;background:transparent;border:none;padding:8px}
+.burger span{display:block;height:2px;width:20px;background:#111;margin:4px 0;border-radius:2px}
+@media (max-width:960px){
+  .nav{display:none}
+  .burger{display:block}
+}
+
+
+
+:root{
+  --pink:#e4007c;
+  --text-on-image:#ffffff;
+  --overlay:linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.20) 45%, rgba(0,0,0,.10) 100%);
+  --radius: 48px; /* for rounded CTA look */
+}
+
+/* Section container */
+.partner-hero{
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(360px, 55vw, 520px);
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background image + overlay for legibility */
+.partner-hero__media{
+  position: absolute;
+  inset: 0;
+  background:
+    var(--overlay),
+    url("imgi_12_join-panda-partner-to-grow-restaurant-sales.png") center/cover no-repeat;
+  z-index: -1;
+}
+
+/* Content block */
+.partner-hero__content{
+  width: min(1100px, 92%);
+  margin-inline: auto;
+  color: var(--text-on-image);
+  padding: clamp(1.25rem, 4vw, 2rem) 0;
+}
+
+/* Headline */
+.partner-hero__title{
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 0 0 1.25rem 0;
+}
+
+/* CTA button */
+.partner-hero__cta{
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .95rem 1.6rem;
+  box-shadow: 0 14px 30px rgba(228,0,124,.35);
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+.partner-hero__cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 20px 34px rgba(228,0,124,.45);
+}
+.partner-hero__cta:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(228,0,124,.55);
+}
+
+/* Motion respect */
+@media (prefers-reduced-motion: reduce){
+  .partner-hero__cta{ transition: none }
+}
+
+/* Small screens */
+@media (max-width: 680px){
+  .partner-hero{
+    min-height: 420px;
+  }
+  .partner-hero__title{
+    letter-spacing: 0;
+  }
+}
+
+
+
+.site-footer {
+  background: #000;
+  color: #fff;
+}
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.footer-head {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: #fff;
+}
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-list li {
+  margin: 6px 0;
+}
+.footer-list a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  color: #ff2b85;
+}
+.social .social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.social-row a svg {
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+}
+.social-row a:hover svg {
+  fill: #ff2b85;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+.copyright {
+  margin: 0;
+  color: #cfcfcf;
+}
+.policy {
+  color: #fff;
+  text-decoration: none;
+}
+.policy:hover {
+  color: #ff2b85;
+}
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+:root{
+  --pink: #e4007c;
+  --text: #111;
+  --muted: #525252;
+  --bg-soft: #f7f7f9;
+  --radius-pill: 999px;
+}
+
+.partner-countries{
+  background: #fff;
+  padding: 3rem 1rem 2rem;
+}
+.partner-countries__container{
+  width: min(1000px, 92%);
+  margin-inline: auto;
+  text-align: center;
+}
+.partner-countries__title{
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+.partner-countries__subtitle{
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Pills grid */
+.partner-countries__pills{
+  width: min(900px, 92%);
+  margin: 2.25rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  justify-content: center;
+}
+
+/* Uniform pink-outline bubble design */
+.pill{
+  appearance: none;
+  border: 2px solid var(--pink);
+  background: #fff;          /* No black background; all consistent */
+  color: var(--pink);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* Interaction states (keeps design consistent) */
+.pill:hover{
+  background: var(--pink);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(228,0,124,.25);
+}
+.pill:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(228,0,124,.45);
+}
+.pill:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(228,0,124,.2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px){
+  .partner-countries__pills{
+    gap: 12px 14px;
+  }
+  .pill{
+    padding: 10px 16px;
+    font-weight: 700;
+  }
+}
+
+
+
+
+
+/* Section */
+.partner-why{
+  background: var(--bg);
+  padding: 3rem 1rem;
+}
+.partner-why__container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+.partner-why__title{
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1.75rem;
+  color: var(--text);
+}
+
+/* Grid */
+.partner-why__grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+.why-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--soft);
+  isolation: isolate; /* keeps overlay effects inside */
+}
+.why-card__media{
+  position: relative;
+  height: clamp(220px, 28vw, 320px);
+}
+.why-card__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+/* Soft dark overlay for legibility */
+.why-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.15) 100%);
+  z-index: 1;
+  transition: opacity 220ms ease;
+}
+
+/* Overlay Title */
+.why-card__overlay-title{
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  margin: 0;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.1;
+}
+
+/* Hover effects */
+.why-card:hover .why-card__media img{
+  transform: scale(1.03);
+  filter: saturate(1.05);
+}
+.why-card:hover::after{
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .partner-why__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .partner-why__grid{ grid-template-columns: 1fr; }
+  .why-card__overlay-title{ top: 14px; left: 14px; }
+}
+
+
+
+
+</style>
+<body>
+    <header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="imgi_1_foodpanda_logo_2023.png" alt="Logo">
+      
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="partners.html">Partners</a>
+      <a href="ads.html">panda ads</a>
+      <a href="contact.html">Contact</a>
+      <a href="careers.html">Careers</a>
+    </nav>
+    <button class="cta">Choose location</button>
+  </div>
+
+
+
+
+  
+<!-- Partner Hero Section -->
+<section class="partner-hero" aria-label="Partner with foodpanda">
+  <div class="partner-hero__media" role="img" aria-label="Food truck serving customers"></div>
+
+  <div class="partner-hero__content">
+    <h1 class="partner-hero__title">
+      Get more orders with<br>with foodpanda
+    </h1>
+
+    <a href="#" class="partner-hero__cta">Join as a partner</a>
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+
+<section class="partner-countries" aria-labelledby="partner-countries-title">
+  <div class="partner-countries__container">
+    <h2 id="partner-countries-title" class="partner-countries__title">
+      Become a restaurant or local shop partner
+    </h2>
+    <p class="partner-countries__subtitle">
+      Take your business to new heights by partnering with foodpanda, the leading delivery service trusted by businesses large and small.
+      We dare to always go further, helping you reach untapped customer bases, boost order volume, and drive more sales.
+    </p>
+  </div>
+
+  <div class="partner-countries__pills" role="list">
+    <button class="pill" role="listitem" type="button">Malaysia</button>
+    <button class="pill" role="listitem" type="button">Philippines</button>
+    <button class="pill" role="listitem" type="button">Bangladesh</button>
+    <button class="pill" role="listitem" type="button">Hong Kong</button>
+
+    <button class="pill" role="listitem" type="button">Singapore</button>
+    <button class="pill" role="listitem" type="button">Taiwan</button>
+    <button class="pill" role="listitem" type="button">Cambodia</button>
+
+    <button class="pill" role="listitem" type="button">Laos</button>
+    <button class="pill" role="listitem" type="button">Myanmar</button>
+    <button class="pill" role="listitem" type="button">Pakistan</button>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+
+
+<section class="partner-why" aria-labelledby="partner-why-title">
+  <div class="partner-why__container">
+    <h2 id="partner-why-title" class="partner-why__title">Why partner with foodpanda?</h2>
+
+    <div class="partner-why__grid">
+      <!-- Card 1 -->
+      <article class="why-card">
+        <div class="why-card__media">
+          <!-- Replace with your image path -->
+          <img src="imgi_25_Riders_C-SM_photo_static_horizontal_retouch-batch-2_V02_SJ-900x600.webp" alt="Delivery reaching new customers">
+        </div>
+        <h3 class="why-card__overlay-title">REACH NEW<br>CUSTOMERS</h3>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="why-card">
+        <div class="why-card__media">
+          <img src="imgi_26_foodpanda-3-scaled-1-900x596.jpg" alt="Rider carrying branded delivery bag on stairs">
+        </div>
+        <h3 class="why-card__overlay-title">BOOST YOUR<br>ORDER VOLUME</h3>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="why-card">
+        <div class="why-card__media">
+          <img src="imgi_27_foodpanda-home-2-900x506.jpg" alt="Rider in branded gear preparing to deliver">
+        </div>
+        <h3 class="why-card__overlay-title">DRIVE MORE<br>SALES</h3>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="why-card">
+        <div class="why-card__media">
+          <img src="imgi_28_【新聞圖片3】foodpanda-精選多家高人氣烤肉餐廳，經典美食一鍵到府幫你解解饞！-1-900x600.jpg" alt="Customers enjoying a meal at a table">
+        </div>
+        <h3 class="why-card__overlay-title">INCREASE<br>CUSTOMER SATISFACTION</h3>
+      </article>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<br>
+
+
+
+
+
+  <footer class="site-footer" aria-label="Footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <a class="footer-brand" href="/">
+        <img src="imgi_1_foodpanda_logo_2023.png" alt="foodpanda logo">
+      </a>
+
+      <div class="footer-cols">
+        <nav class="footer-col" aria-labelledby="footer-nav">
+          <h3 id="footer-nav" class="footer-head">Navigate</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="newsroom.html">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footer-collab">
+          <h3 id="footer-collab" class="footer-head">Collaborate</h3>
+          <ul class="footer-list">
+            <li><a href="/careers">Explore careers</a></li>
+            <li><a href="/riders">Become a rider</a></li>
+            <li><a href="/for-business">Feed your team</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col social" aria-labelledby="footer-social">
+          <h3 id="footer-social" class="footer-head">Follow us on</h3>
+          <div class="social-row">
+            <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.55 17.52 2 12.06 2 6.55 2 2 6.55 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.55v1.86h2.78l-.44 2.91h-2.34v7.03C18.34 21.19 22 17.05 22 12.06z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.47c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.57H9.41V9.75h3.41v1.47h.05c.47-.89 1.63-1.83 3.36-1.83 3.6 0 4.27 2.37 4.27 5.45v5.61zM5.34 8.28c-1.14 0-2.06-.93-2.06-2.06s.92-2.05 2.06-2.05c1.13 0 2.05.92 2.05 2.05s-.92 2.06-2.05 2.06zM7.11 20.45H3.57V9.75h3.54v10.7zM22.88 0H1.12C.5 0 0 .5 0 1.12v21.76C0 23.5.5 24 1.12 24h21.76c.62 0 1.12-.5 1.12-1.12V1.12C24 .5 23.5 0 22.88 0z"/></svg>
+            </a>
+            <a class="social-btn" href="https://www.instagram.com" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.84.07 1.24.06 2.07.26 2.55.44.64.25 1.11.55 1.6 1.04.49.49.8.96 1.04 1.6.18.48.38 1.31.44 2.55.07 1.26.07 1.64.07 4.84s0 3.58-.07 4.84c-.06 1.24-.26 2.07-.44 2.55-.25.64-.55 1.11-1.04 1.6-.49.49-.96.8-1.6 1.04-.48.18-1.31.38-2.55.44-1.26.07-1.64.07-4.84.07s-3.58 0-4.84-.07c-1.24-.06-2.07-.26-2.55-.44-.64-.25-1.11-.55-1.6-1.04-.49-.49-.8-.96-1.04-1.6-.18-.48-.38-1.31-.44-2.55-.07-1.26-.07-1.64-.07-4.84s0-3.58.07-4.84c.06-1.24.26-2.07.44-2.55.25-.64.55-1.11 1.04-1.6.49-.49.96-.8 1.6-1.04.48-.18 1.31-.38 2.55-.44C8.42 2.16 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33 0 7.05.07 5.77.13 4.84.34 4.09.63A5.4 5.4 0 0 0 2 2.01c-.7.7-1.38 1.69-1.68 3.07-.29.75-.5 1.68-.56 2.96C-.31 9.33-.31 9.74-.31 12s0 2.67.07 3.95c.06 1.28.27 2.21.56 2.96.3 1.39.98 2.37 1.68 3.07.7.7 1.69 1.38 3.07 1.68.75.29 1.68.5 2.96.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.28-.06 2.21-.27 2.96-.56 1.39-.3 2.37-.98 3.07-1.68.7-.7 1.38-1.69 1.68-3.07.29-.75.5-1.68.56-2.96.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.28-.27-2.21-.56-2.96-.3-1.39-.98-2.37-1.68-3.07-.7-.7-1.69-1.38-3.07-1.68-.75-.29-1.68-.5-2.96-.56C15.67 0 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">Copyright © <span id="year">2025</span> foodpanda</p>
+      <a class="policy" href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+</header>
+</body>
+</html>
