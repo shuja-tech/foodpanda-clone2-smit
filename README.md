@@ -2,12 +2,11 @@ Foodpanda Clone SMIT A simple Foodpanda clone website built using HTML, CSS, and
 
 🚀 Features
 
-Responsive homepage layout Hero section with background image Navigation bar with links Search bar for location input Featured restaurants grid Promotional sections and ads About page with company details Footer with navigation and social links
+Responsive homepage layout Hero section with background image Navigation bar with links Search bar for location input Featured restaurants grid Promotional sections and ads About page with company details Footer with navigation and social links fulfulling all use cases.
 
 🛠️ Technologies Used
 
 HTML5 for structure CSS3 for styling and responsiveness JavaScript for interactivity
 
-📂 Project Structure ├── index.html # Homepage ├── about.html # About page ├── styles.css # Main stylesheet ├── script.js # JavaScript functionality └── images/ # Project images and assets
 
 Github Live: https://shuja-tech.github.io/foodpanda-clone2-smit/
